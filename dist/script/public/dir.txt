@@ -1,0 +1,3 @@
+Scripts in this directory can be run by the FQ client, so its up to the script to take care of its own security.
+For instance, don't have a script called "Get50Turns.c" that gives 50 turns or someone could possibly send a fake
+packet to run this script if they knew the filename.

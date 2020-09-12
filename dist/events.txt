@@ -1,0 +1,128 @@
+//This file holds the random events that can happen.
+//The range let's you define different events for people in a different total Bury Point brakets.
+//If there is more than one event in a range, it will choose one randomly.
+//with mod commands, you set the low and high range.  If same, there is no random factor.
+
+//*************************************************************
+range|-229999999|299999999
+
+start_entry
+message|You find some embalming chemicals you had misplaced!
+mod_bp|3|6
+mod_luck|1|3
+set_pic|flash/places/embalming-room.swf
+
+start_entry
+message|This time you notice the spilled blood BEFORE you slip.
+mod_bp|3|6
+mod_luck|1|3
+
+start_entry
+message|Your FuneralManager (TM) software upgrade comes in the mail!
+mod_bp|3|6
+mod_luck|2|4
+
+start_entry
+message|You put headphones on a body and take a picture, you're a riot.
+mod_bp|10|10
+mod_luck|1|3
+
+start_entry
+message|Some kids come by and want to see a body, you charge 'em.
+mod_bp|4|4
+mod_luck|1|3
+
+start_entry
+message|`4You trip over an arm.
+mod_luck|-3|-1
+
+start_entry
+message|You perform a body puppet show to pass the time and crack yourself up. 
+mod_luck|1|3
+
+start_entry
+message|You win your computer game, Teenage Lawnmower!
+mod_luck|1|3
+
+//The following text originally created by jjohn@taskboy.com
+
+start_entry
+message|`4Yikes! You forgot to pay taxes last month!
+mod_luck|-1|-1
+
+start_entry
+message|At your high school reunion, you find you now make more money than the former captain of the football team!
+mod_bp|1|5
+mod_luck|1|3
+set_pic|flash/stuff/money_bag_2.swf
+
+start_entry
+message|You find out that your old high school sweetheart has married the captain of the football team.
+mod_luck|-2|-1
+set_pic|flash/people/f_sexy2.swf
+
+start_entry
+message|An old mortuary science professor bequeaths you his favorite skeleton, "Morty".
+mod_bp|4|8
+mod_luck|1|3
+set_pic|flash/stuff/battle_lose.swf
+
+start_entry
+message|`$Ever get the feeling you're being `4watched`$?
+mod_luck|-1|-1
+
+start_entry
+message|Some kids dig through your garbage and find your "gag" photographs.
+mod_bp|-10|-5
+mod_luck|-1|-1
+
+start_entry
+message|Oh no! One of Deathville Zoo's pythons has escaped. I guess business will be picking up soon.
+mod_bp|4|8
+mod_luck|1|3
+set_pic|flash/animals/rattler.swf
+
+start_entry
+message|A new shipment of `5Forever Fragrant`$, America's top-selling brand of coffin air fresheners, has arrived. Joy!
+mod_bp|5|10
+mod_luck|1|3
+set_pic|flash/stuff/red_rose.swf
+
+start_entry
+message|Local college frat boys rent some of your inventory for pledge week.
+mod_bp|10|15
+mod_luck|1|3
+set_pic|flash/people/m_teen.swf
+
+start_entry
+message|Local college frat pledges break into your parlor and steals some inventory.
+mod_bp|-15|-10
+mod_luck|-2|-1
+set_pic|flash/people/m_teen.swf
+
+start_entry
+message|You find a new place to dump embalming fluid.
+mod_bp|10|15
+set_pic|flash/stuff/toilet.swf
+
+start_entry
+message|You get `4fined `$for improper disposal of embalming fluid.
+mod_bp|-15|-10
+set_pic|flash/stuff/toilet.swf
+
+start_entry
+message|Cousin Sal, the idiot no one thought would get a job, gets his medical degree from the University of POBox 411 and moves into Deathsville. Nepotism is, for lack of a better word, good. 
+mod_luck|1|3
+set_pic|flash/people/m_doctor.swf
+
+start_entry
+message|A major duststorm shuts down Deathsville for awhile. Apparently, even death can take a holiday.
+mod_bp|-10|-5
+set_pic|flash/wait.swf
+
+//jjohn 11-3-2002
+
+start_entry
+message|The local bar introduces new 80-proof barley wine. Locals mistake it for regular beer. DWI incidents skyrocket.  
+mod_bp|10|15
+set_pic|flash/bar.swf

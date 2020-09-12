@@ -1,0 +1,15 @@
+//This file holds the random strings that we show when no customers appear.
+
+//*************************************************************
+range|-229999999|299999999
+
+start_entry
+message|Hi, I'm a secret message from your teeth
+start_entry
+message|Advance to boardwalk
+start_entry
+message|You have reading skills
+start_entry
+message|Your real parents were rich and famous
+start_entry
+message|MSG and fat are actually good for you it turns out

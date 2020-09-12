@@ -1,0 +1,3 @@
+# Let's tell all robots (google/etc) to not spider our FQ stuff
+User-agent: *
+Disallow: /

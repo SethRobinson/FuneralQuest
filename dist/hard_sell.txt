@@ -1,0 +1,54 @@
+//Information on hard sells.  You must reload texts (or restart FQ) for any changes to take place.
+//The order they are listed is important!
+
+reference|a
+name|Forest Lawn Premier Double Plot
+price|2250
+add_item|
+
+reference|a
+name|Giant Headstone
+price|2560
+add_item|
+
+reference|a
+name|Crypt with Lower Bunk
+price|3100
+add_item|
+
+//from jjohn, 11-24-02
+
+reference|a|
+name|Titanium (bullet-proof) Coffin Exterior
+price|3400
+add_item|
+
+reference|a|
+name|Vegas-style Celebrity Roast for the deceased
+price|3000
+add_item|
+
+reference|a|
+name|New Orleans Dixieland Send-Off
+price|2500
+add_item|
+
+reference|a|
+name|Posthumous Vanity Web Site
+price|2100
+add_item|
+
+reference|an
+name|Egyptian Death Shroud
+price|1750
+add_item|
+
+reference|a
+name|plot next to Elvis
+price|2400
+add_item|
+
+reference|a
+name|Private Gold Plated Crypt
+price|2600
+add_item|

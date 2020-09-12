@@ -1,0 +1,596 @@
+---- This looks to be like some design doc, probably worked on by Seth and Greg/Pap ----
+
+
+
+* Fix 80 proof barley wine typo (Manauser)
+* Fix hard sell crash
+
+
+
+***** BEFORE RELEASE ******
+
+ 
+* Set maximums for HP and strength.  This will place emphasis on using tags on cars and
+  other new ways to build up your parlor.
+* Redo the in-game chat room using Flash XML sockets.  (maybe)
+
+* Be able to send messages from god from the player editor?
+
+Necromancy (Evil Magic)
+Church Associate (Good magic)
+
+Nothing relaxes you like a visit to the town grave site.
+
+
+* Release a stable V1.00 product, take FQ out of beta.
+
+* Limit attack points -- ?? what the hell does this mean?
+
+
+* Real dates have special log stuff?
+* Chat window on server
+* Rewrite chat to use XML?
+* Change funeral name?
+
+
+
+
+Town Graveyards
+
+A dense fog covers the many mounds and headstones that
+make up the town graveyards.  You see other morticians
+dancing through the memorials as they clean, adjust and
+make room for new occupants.
+
+Picture:  Graveyard with heavy fog.
+
+Options:
+
+Attack
+Look around
+Leave
+
+You have time for 1 more attack today.
+
+Attack info:
+
+First attack is decided by who has more plots.
+
+Fall into a grave
+
+Power bars upper left with names
+
+
+
+
+Pale Horse Cafe
+
+The Pale Horse has been here since you can remember.  A great place to gossip
+or just sip a mochachino and watch tv.  You always wondered why that had that
+big glass bottle on the roof.
+
+You sit down at one of the large oak tables.
+
+The Reaper Club
+
+You shiver as you approach The Reaper, a rave club
+frequented by the underbelly of society. (mostly
+funeral directors)
+
+The cover charge is 2 wooden tags.
+Leave
+
+You can barely hear yourself think.  
+
+Hire a hit man
+Leave
+
+Casket Warehouse
+
+Di-Mart is not only
+an official DuraRest (tm) reseller but
+also carries many other useful supplies
+for the death care industry.
+
+What kind of items would you like to look at?
+(show money)
+
+Hearses
+Misc
+Leave
+
+
+Bank
+
+people exchanging casket sales tags 
+
+
+
+Security system details:
+
+
+FQLicense 
+
+Example:
+
+
+"I would need a gold casket for my  brother."
+
+
+
+Options:  Sympathy, Guilt, Hard Sell, Soft Sell, Finish
+
+
+Building the customer:
+
+
+Casket levels:  Cremation, Cremation Casket, Wooden Casket, Silver Casket, Gold CasketVault
+Iron Vault, Naked Statue,  Crypt (Lower Bunk), Crypt (Chest level bunk)
+
+
+Embaming options:  Basic, full reconstruction, Air brushed Embalming, Burial Footwear
+
+Fine, I would like them to play "Pomp & Circumstance" at the service.
+
+Fine, I would also like to have a buffet at the service.
+
+
+
+Cremation options: Scattered ashes, memorial urn
+Memorial: Memorial Plaque Casket Upgrade, Masolem, Giant Headstone, Crypt (Lower Bunk) 
+
+Emotion levels:
+
+In Shock
+Dazed
+Confused
+Speechless
+Disturbed
+Frustrated
+Annoyed
+Angry
+Pissed
+
+Offer coffee:
+
+Flowers: Floral Arrangement
+
+Plot level:  Forest Lawn =, Memorial Park
+
+Grief Therapy
+
+
+
+Coll words:  Bereaved
+
+Just think of the beautiful memory picture you would have of your mother in a Gold casket...
+
+I can tell by the fine suit you're wearing that you appreciate the finer things.
+
+I don't mean to rush you, but this isn't really something you can wait a week thinking about..
+
+Well, I suppose you COULD go with the cheaper casket.. except it really doesn't offer much protection
+from worms and the like.
+
+You know.. your fathers social security death benefits would probably cover some...
+
+Ma'am,  let me ask you one simple thing.  Did you hate him?  Why else wouldn't you make this funeral
+something to be proud of?
+
+A gold casket reflects character and station in life.. it's suberb styling reflects a successful living.
+
+You know, I saw your neighbor in today.. he bought a gold casket.  Impeccable taste, that man has.
+
+Embalming is uh, required by the state for uh, disease reasons.  Yeah, required. 
+
+The funeral is not occasion for a display of cheapness, you know.
+
+I would stay away from cremation.  Your loved one deserves better than 'bake and shake'!
+
+
+Hard sell:  
+
+Sayings:
+
+
+
+
+
+
+FuneralQuest Design Doc
+
+
+
+
+Premise
+---------
+Simplistic game.  Log in, use your turns, make money, come back tomorrow.
+
+Goal:  Become the most popular funeral parlor in town.  While not much skill is required, if your
+oppenent forgets to log in for a day or two you can overtake him.  The rest is luck and stocking up
+on good days.
+
+
+What would you  get if you crossed LORD, EverQuest and sex with the dead... FuneralQuest!
+
+Funeral Quest .... put fluids in people, and get away with it ...
+
+Process for a new user
+----------------------
+1.  Click new user button
+2.  if game isn't full, they reach the new user screen.
+3.  They are asked for their name and password.  Password is verified.
+4.  They are asked for email, sex and funeral name.
+5.  Record is created on the server.  News item added to the obits about new player.
+
+
+Process of a play
+---------------------
+1.  User logs on, server retrieves info.
+2.  Player reads newspaper like obits.  (daily news)
+3.  Get's wake up message and weather information.
+4.  Goes to main screen.
+5.  User Clicks "Wait for business" - makes money.
+6.  Buys stuff if needed
+7.  If (turns > 0) Goto 5.
+8.  Write some last minute notes to other people, visit bar ect, quit.
+
+
+
+
+Main screen description
+------------------------
+Items shown:
+1. Funeral Home name, rating %, rating description and ranking.
+   (example: Pap Mortuary %22 rating (Sucky) 55th most popular in town.
+2. Turns left
+4. Karma - 1 to 100, # plus text description for each level
+5. Cash
+
+Buttons: Travel (Takes 1 turn), Wait for customer (Takes 1 turn), Read Newspaper, Email, Rankings, Stats & Inventory, Who's Online, Quit
+
+
+
+Stats & Inventory Screen Description
+----------------------------
+Parlor Popularity: %44: (Ranked 22nd in all)  Sucking cock
+Personal Karma is 13.  Your ass is grass.
+
+Occuppied Plot Daily Income:	 (Occuppied Plots * $5)
+Free Plots		  		 ($50 move in)
+Cheap Wooden Caskets (Sell for $100)    : 4
+Fancy Wooden Caskets (Sell for $200)	: 2
+Silver Caskets (Sell for $500)			: 1
+Gold Caskets (Sell for $1000)			: 1
+
+All caskets sold at 30% markup.  (Change)
+
+Incinerator Installed?  Yes/no
+
+Options:
+
+If (karma < 40) Dig for goodies (1 turn)
+
+Server changeable stuff and default settings:
+
+Mayor name:  ??
+Turns per day:  10
+Turns needed to travel: 1 (once you hit the travel map it's unlimited until you return
+	though)
+Wooden Coffin buy/sell price:  $75/100
+Fancy Wooden Coffin buy/sell price: $150/200
+Silver Coffin buy/sell price:  $350/$500
+Golden Coffin buy/sell price:  $500/1000 (biggest markup)
+
+Should I include headstones?  Or too complicated for the player?
+
+
+***** misc stuff ******
+
+
+Sometimes while waiting for customers random events will happen.  This is basically
+a text message the server sends and in some cases a flash movie that is loaded into
+the side window.  In varible changes are sent by server as well.
+
+
+****** EVENTS THAT DON'T USE TURNS *****
+
+EVENT 1:
+
+If (funerate_rating < 20 and wooden_caskets > 0)  (funeral business is not going well)
+  
+Your waiting is interrupted by a crash.  Looks like the children were throwing rocks
+again.. You quickly unzip and moon them through the broken window.  What is wrong
+with those kids?
+
+1 WOODEN CASKET RUINED
+
+
+***** EVENTS THAT HAPPEN WHILE PREPARING THE BODY *******
+
+EVENT 1
+
+if (karma < 40)
+
+You notice a ring is still on the dead woman's finger.  It's a shame to bury
+such a beautiful stone.
+
+Buttons:  <Take it>  <Leave it>
+
+If take:
+
+You gently work it off and put her hand in her pocket so noone will notice.
+
+YOU SELL THE RING FOR $200 (random)
+
+YOUR KARMA GOES DOWN 1 FOR DISHONESTY
+
+If Leave it:
+
+You smile and gently pat it.
+
+KARMA GOES UP 1 FOR BEING HONEST 
+
+
+Funeral ratings
+----------------
+This is dynamically creating based on your money, inventory, used and unused plots and any misc
+accomplishments.
+
+It's a percentage between 0 and 100.  
+
+Initial rating will be around 10.
+
+1|Protected by Satan
+2|Arson attempts
+3|Petitioned to be shut down
+4|Pissed on
+5|Despised
+6|Hated
+7|Picketted
+8|Boycotted
+9|Really unpopular
+10|Unpopular
+11|Hole in the wall
+12|Not used much
+13|Not well liked
+14|Unheard of
+15|Ignored
+16|"What's this place?"
+17|Neighbors hate you
+18|Asked to clean up the place
+19|Trailer park people use you
+20|Discount parlor
+21|Crappy and Humble
+22|Things will get better
+23|Robbed regularly
+24|Graffiti'd often
+25|Bad Ghosts haunt the place
+26|Black Cats always nearby
+27|A bit of a spider web problem
+28|Smells odd
+*NEW*  29|Most bodies here are legitamitly dead
+*NEW*  30|Not too many maggots get onto the bodies here
+*NEW*  31|Even dead people won't use the bathroom here
+*NEW*  32|Some middle class people are buried here
+*NEW*  33|Buffet food is poor
+*NEW*  34|Stopped recieving pizza for 'i.c. weiner' and 'i.p. freely'
+*NEW*  35|People stop confusing the place with and Adult Store
+*NEW*  36|Muggings in the area have slowed
+*NEW*  37|Graffiti has slowed
+*NEW*  38|Smell in the back alley has lessened
+39|The preppy kids bury friends here
+40|Fairly popular
+41|Don't need mafia help anymore
+*NEW*  42|Phone soliciters have slowed a little bit
+*NEW*  43|Undead attacks common
+*NEW*  44|Dead people used on the habatchi
+45|Ghosts haunt the place
+49|Grounds nicely mowed
+50|Coupons have helped
+*NEW*  51|Stopped buying discount Top Ramen
+*NEW*  52|Cadillacs parked out front
+*NEW*  53|People are dead -before- they come in ...
+*NEW*  54|Family Jewelery no longer 'misplaced'
+*NEW*  55|A cleaning lady comes by regularly
+
+60|Nice Place
+61|Buffet Days go well
+*NEW*  62|Real Medical license aquired
+
+70|Golf Course people buried here
+71|Good Place
+72|Nice Ghosts haunt the place
+75|Local church recommends you
+76|White Doves live here
+97|T-Shirts with your logo
+98|People visit often
+99|People dying to get in
+100|THE BEST!!!
+
+Karma text
+--------------
+1|Demon Like (really evil karma is in red)
+2|Satan Himself
+3|Paul Crouch
+4|Sony Executive
+5|Tobbaco lawyer
+6|Eats Children
+7|Producer
+8|Porn director
+9|Will bury anything for $$
+10|Horse Lover
+11|Might 'help' people get to your place
+12|Drug dealer
+13|Mobster
+14|AOL user
+15|WebTV user
+16|Laughs at greeting cards
+17|Enjoys Jay Leno
+18|Beats kids
+19|Gives 'candy' to kids
+20|Cheap Porn star
+21|Bootlegs PlayStation CDs
+22|Bootlegs Id games
+23|Enjoys Coors light
+24|Eats at KFC
+25|Bootlegs Dreamcast CDs
+26|Entertained by TNN
+27|Likes Hunting Games
+28|Plays UNO
+29|Knows all the Pokemon's names
+30|Porn star
+31|Bootlegs Epic games
+32|Level 50+ in EQ
+33|Has 500+ NES roms
+34|Nice guy, but evil
+35|Pops children's balloons
+36|Pets run from you
+37|Enjoyed 'Mission to Mars'
+38|Has a cable "black box"
+39|Starves goldfish
+40|Hits on nuns
+41|Killed his tamagotchi
+42|Takes illegal tax deductions
+43|Takes recreational drugs
+*NEW*  44|Doesn't say 'bitch' to women anymore
+*NEW*  45|Closes the door while using the bathroom
+*NEW*  46|Stopped using the word 'anus' in common conversation
+47|Gets paid to surf
+48|"Stops short"
+49|Smells questionable
+50|Normal (yellow text)
+51|Average
+52|Self Improver
+53|Optimistic
+54|See a future in this
+55|Humble but growing
+56|Prideful
+57|Finally got rid of his real-doll
+58|Good tipper
+*NEW*  59|Stops posting naked pictures of corpses on their website
+
+65|Can get dates
+70|Family Preferred
+71|Feel good about job
+80|Smiling service
+81|Making Death Better
+82|Playa
+83|Enjoy helping death along
+84|Senior citizens don't shunn you
+85|Respected citizen
+86|Black suits look good on you
+87|Trusted with girlscouts
+90|Children and Kittens trust you
+*NEW* 91|White Doves are known to land on you randomly
+
+98|Pap like
+99|Seth Like
+100|Angelic (really good karma is in white)
+
+
+Daily news stuff
+----------------------
+Random thing happens each day that affects gameplay.
+
+Random stuff has newspaper heading title then the story in a smaller font below.
+
+1. DEATH WITH DIGNITY:
+   20% off Gold Coffins at the Coffin Warehouse!  For a comfortable enternal lay,
+   come see us today! 
+2. SHAKEUP IN <townname>:
+   Small earthquake today.  Some casualties. "I barely felt it, actually." Comments Mayor
+   <Mayor name>. Effect: "Wait for customer" more likely to work
+3. MORTUARYS'S DO "ROCKIN'" BUSINESS:
+   Tragedy strikes.  Huge earthquake hits downtown <town name>!
+   "I'm glad we have so many funeral parlars in <town name>.. we're gonna need 'em today."
+   Effect: %80 wait for customer success rate
+4. A BURGER TO DIE FOR:
+   Ecoli outbreak hits Bill's Big Burger leaving many dead or just puking a lot.
+5. ENTIRE SOCCER TEAM KICKS THE BIG ONE
+   Plane crash kills 15 people.  Some funeral parlor is going to be in for some big business.
+6. MOLESTOR'S BOUNTY FOUND
+   The bodies of the town Molestor were found on his farm property.  
+   Effect: All customers who come in that turn want to buy pricey funerals to try and 
+   cover for such a tragic death. <-- Doesn't make enough sense.. reword?
+7. NEW SPEED LIMIT SPEEDS DEATH
+   Maybe 55 in a residential is bad.  "We should've known people can't dodge cars," says
+   Mayor <Mayor name>.
+8. MIXED UP VIAGRA MEDICATION IN RETIREMENT HOME
+   "It's like a stabbing ... but different," comments the coroner's office.
+
+*NEW* 
+9. ZOO ANIMALS ESCAPE, SEEK REVENGE ON HUMANS AND COTTON CANDY
+   "Now their rage is out of the cage," says local austrailian zookeeper.
+10. 3D PORNO MOVIE SENDS VIEWERS INTO CARDIAC ARREST
+   "It's like it was coming out at me ... a lot," comments local sleeze viewer (not Pap).
+11. MANY DEAD AFTER PLAYING THEIR ONLINE GAMES TOO LONG
+   "All they wanted was another level, what they got was death," comments Police Commissioner.
+12. LOCAL PIZZA COMPANY SCREWS UP BIGTIME
+   "If they didn't eat the pizza in under 30 minutes they would die.  Bad cheese indeed," reports some dude.
+
+
+Wait for customer stuff
+-------------------------
+Normal day only has a 50% chance of getting a customer each time.  If you don't get one
+you see a random message:
+
+1.  "Time passes slowly.  Your door remains unshadowed."
+2.  "You wait for a while.  Nothing happens."
+3.  "You stare at the door as if commanding it to open.  It doesn't."
+4.  "The clock's ticking quietly mocks you.  People walk by, they just don't walk in."
+5.  "Nothing's happening today, you wonder what's on FOX."
+6.  "The seconds tick away.  If only you knew how to play solitare."
+7.  "The only thing dead around here is your business."
+8.  "Yet another Nancy Drew book passes through your hands."
+
+*NEW*
+9.  "Even masturbation doesn't break your boredom."
+10.  "If only you could bend space and time, you wouldn't have this headache."
+11.  "Even as you look at porn on your blazing 28.8 modem time goes slower."
+12.  "You're getting quite good at rolling a quarter over your knuckles."
+13.  "No one comes in, maybe you can start drinking on the job."
+
+
+Created a random customer using adlib type stuff starting with 1of 6 general designs.
+
+Pattern 1:
+
+A %person enters the shop.  %his/her eyes are red and puffy, obviously from weeping.  
+
+"My %deadperson was %1 by a %2 in a terrible accident.  I require a %3 casket and a plot.  Can you
+do it?"
+
+%person can be: young woman, old lady, young man, very old man, beautiful woman, really ugly chick
+
+%his/her is modified to match the customers sex
+
+%deadperson can be son, daughter, father, cousin, twin brother, twin sister, uncle, neice, 
+    mother or husband/wife depending on customers sex.
+
+%1 could be:  hit, smashed, run over, thrown, crushed, had a nasty incident with
+
+%2 could be:  car, tractor, fridge, piano, bull, elephant, truck, fork-lift, workout machine
+
+%3 could be Wooden, fancy wooden, silver or gold casket.
+
+In this case, if you don't have the right casket or a plot free, she will walk.
+
+Pattern 2:
+
+
+
+Quotes:
+
+"No sweetie, it really is spelled 'button'" - Seth
+
+"Hayai kudasai!!!" (tranlated: hurry please!) - Seth as he claps his hands in an
+ annoying fasion
+
+"My president sucks ass" - Akiko
+
+ 
+"Don't pick your ear with the stylus!" - Seth
+"Why?" - Akiko
+
+"That's nice, if I pay $60 I can get it for free," - Akiko

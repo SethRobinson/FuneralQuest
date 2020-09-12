@@ -1,0 +1,405 @@
+** Known bugs/issues **
+
+
+** what's new in 0.99 **
+
+* $ symbol is now stripped from player names
+* added /tv (on/off) control to chat (Jaylou)
+* Can set or disable name changing in the game options (File Sponge)
+* Fixed get crazy amount of exp bug with an ill-formed daily event
+
+** what's new in 0.98 **
+
+2-10-2008
+
+* Limit of script variable/function names raised to 64 chars from 32 to fix problems with some FQ addons that went over the limit (Thanks Doug)
+
+** what's new in 0.97 **
+        
+4-20-2007
+
+* Fixed vuneralibility that would let a hacked client win battles ( reported by Ivan256 )
+* Added some security checks, admins, check your error log for messages like:
+"Looks like (the player's name) tried to cheat by calling command_battle_run (or another command) with a hacked client".  If you see it,
+ I would suggest banning that player, he's sending bad data and probably trying to find an exploit.  Several places are checked
+ and I will be adding more.
+* Had to redo the installer with NSIS, the old Wise setup wouldn't work, good riddance.  But please let me know if anything is broken...
+
+8-2-2006
+
+* FQLicense server now can properly list two or more games running from the same IP.  Note that different
+logon licenses must be used for each one.
+* Added "use www.myipaddress.com to be sure of your IP" message
+
+12-21-2005
+
+* Checks and fixes corrupt values for transportation (instead of crashing)
+* Sets anyone with negative bury points to 0
+
+
+(8-26-2004)
+
+* Did some early stress tests with FQStress, (it's still very basic and can't logon yet)
+  the MFC based logger is a definite problem, while pounding the server with hundreds
+  of requests I'm unable to open a the server configuration window or otherwise do 
+  anything through its GUI
+
+* Rewrote the logger to use an STL deque of strings and limit visual updates to every
+  half a second, it now functions fine during the stress tests.
+
+(8-24-2004)
+
+* Recompiled with updated support libraries, scripting engine
+* Added "Allow X amount of players on at once" setting (Server setup screen) in case due
+  to hardware limitations you want to allow less players on at once than your license allows
+- Looked for memory/crash type bugs, not able to find them.  But the server is crashing on
+  a site when 40+ people are logged on at once so it must be my fault.
+- Partially done constucting FQStress, a utility designed to help me stress test the server.
+- Is the crash related to saving the player data?  I setup a test that saves 10 times a second
+  but was unable to reproduce any problems.
+
+** what's new in 0.95 **
+
+* Fixed issue with maint_player.c not being able to access player vars correctly
+* Added new scripting hook newday_player.c, it runs right after the initial logon
+  maint for each player.  (or if they stay on past midnight it will get run then too)
+  This finally allows mods to change turns and things every day.
+* Added modulus (%) op to the scripting language at Joe Johnston's request, special thanks
+  to Joe also for noticing all the scripting errors and helping me fix them.
+* Added command "Random" to FQscript.  It already had RandomRange(min,max) but Random(max) is just
+  something every language should have.
+* Replaced my crap FQ scripting documentation with Joe Johnston's version that he was nice enough to donate
+* Added relevant links to the FQ Admin help page
+* Many misc supporting libraries that FQ uses have been updated for speed and bugfixes
+* IP Address shown at the beginning is now correct even on systems with multiple IP's
+* Default screen size for the server dialog is slightly bigger now, shows more log
+* I now show a "type this from the browser" address to help new admins understand what
+  to give to people to play.
+
+No changes to flash were or scripts were made, other than adding newday_player.c which isn't really used.
+
+** what's new in 0.94 **
+
+* Fixed a vulnerability that could cause a crash if a certain kind of malicious packet was sent
+
+
+** what's new in 0.93 **
+
+* Ok, when I fixed that last crash bug I created another one.  Fixed "Socket Sink" errors.
+* Text for entering/leaving the cafe is now colored purple so people can't fake it.
+* Added /info command in cafe
+* Added /give command in cafe
+* Added limit to how many tags a person can receieve by /give per day.  Set default to 1.
+* Tags per day now shown on the 'server settings' html
+* Server settings now will warn people it's a demo server if applicable
+* Enemy hitpoints are now shown before attacking when you break into a parlor.  This
+  way people can figure out when stealing is a good idea.  With lockpicks gettings wasted
+  now this is important.
+
+//Script related
+* maint_player.c is now run for EACH player right after maint each day.  This
+  is where you can do things like "if he owns this item, give him this much bonus"
+  or whatever.
+* Finally added some SCRIPTING DOCUMENTATION!  I have some general info
+  and I detail (somewhat) each script command.  You can find Scripting.htm in
+  your FQ folder on your start menu.
+* New script commands added:
+ GetTransportationFromID()
+ GetTotalBPs()
+ ModTotalBPs();
+ GetTodaysBPs();
+ ModTodaysBPs();
+ GetLuck();
+ ModLuck();
+ GetTurns();
+ ModTurns();
+ GetStrength();
+ ModStrength();
+ GetMaxHP();
+ ModMaxHP();
+ GetPsychUpgrades();
+ ModPsychUpgrades();
+ GetPolice();
+ SetPolice();
+ GetPlayerFights();
+ ModPlayerFights();
+ GetRankPercent();
+ GetTopPlayerID();
+ GetRandomPlayerID();
+ GetDay();
+ GetTourneyDaysLeft();
+ AddUpdateBPs();
+ AddUpdateTurns();
+ AddUpdateLuck();
+
+
+** what's new in 0.92 **
+
+* Fixed another crash bug, this is the main reason for this release.  It's been tested about
+two weeks and has not had a single crash/problem so I believe it is very stable.
+* Adjusted luck events a bit and added one text, it's a little easier to raise luck.
+* If you want a tournament to automatically start at midnight, you can set the day to -1 to do
+  so.  If a tournament has just ended, you don't need to worry about it because it will auto
+  reset at midnight.  The -1 trick has one problem, if you restart the server it will change it
+  to day 1 and you'll have to set it to -1 again though...
+
+** what's new in 0.91 **
+
+* Hard selling when out of hard sell items no longer causes a crash
+* Added some more hard sell item texts, just for fun
+* Fixed crash bug with the new color code stripper I added last version
+* Fixed bug in my RandomRange() function that could include a # 1 higher
+  than the max.  Argh, it was so rare and could possibly screw up so many
+  things, this was a nasty ass bug.
+
+** what's new in 0.90 **
+
+* Added a powerful C style scripting engine!  The church is now completely run by script.
+
+The scripting systems primary purpose is to make FQ additions easier, faster and less error prone
+to implement.  It also has the tasty side effect of letting anybody who wants to dynamically change game
+text and logic do so in a way they could not before.  In fact, someone could now add any number of new buildings
+to the FQ map without my help, each with real unique purposes and game logic associated.
+
+To see what a script looks like, edit arson.c in script\events.
+* Added the arson event, you can pay gold to set other parlors on fire.  Everything including emailing
+  the target player, adding to the log and changing their stats is done by the arson.c script!
+* Sifted through and added jjohn's new texts.  Fantastic writing.  I fixed a few typos and cut out any
+  events that would conflict with my new hard coded story line plans.  I also changed a lot of #'s to
+  balance better with the overall game changes, such as limiting soft sell amounts to multiples of 50.
+* Random events now properly format negative #'s for display, rather than "you get -40", you now "lose 40".
+(there is a slight issue with the formatting if you GIVE them one thing and REMOVE another thing in the
+same event, so don't do it)
+* Fixed a small issue where it did not appear to reconnect to the server after making changes in the game config
+* It now shows a "Connecting to server" message while waiting for the initial server info.
+* The "Bereave Emotion System" was modified, you no longer lose customers for going over their
+  limit if they are not pissed in some cases.  (basically, cheapness is no longer
+  taken into account when computing if they would leave or not, only emotion. This way it should
+  make more sense to the player)
+* A new psyche skill is now possible after 5 upgrades, it will double the person's spending limit.
+* Now all customers who leave pissed will hit a competing parlor, before it only did it when you
+  pissed someone off with sympathy/guilt skills.
+* Added a robots.txt file to tell spidering robots not to mess with the server
+* Added new items to the store!  Safe, Heavy Padlock and lockpicks. They also show up
+  on the stats screen.  (stats.c in  the scripts dir btw)
+* Setting the game to day 0 will effectively pause the game until midnight.  Used so you
+  start a game perfectly at midnight so all players will start on even ground.
+* Fixed a bug where the you could see the hearses for sale listed twice or more.
+* "Inactivity timeout" is now active in the chatroom too. Previously, players could
+   idle in there all day.
+* Slight addition to the html help
+* The psychology skill was rebalanced a bit, now each upgrade gives a clear message on the
+  new skill you learned.  It's a bit more powerful and noticable now.
+* Changed the way the status update timer worked, I believe this fixes a server crash
+  bug due to a concurrency issue.
+* Text-to-speech from the chatroom sounds better (server side only)
+* Server player editor now does case insensitive sorts
+* Fixed a bug where sometimes after editing a player the player #id showed wrong after the
+  edit
+* Padlocks decay and break
+* It now shows your correct IP address at startup even on computers with multiple NIC's
+
+** what's new in 0.79 **
+
+* Flash was modified to run a little faster.  Some of the hokey zooming effects were
+  removed, it's just too slow.
+* Added a few words to badwords.txt
+* Luck events no longer take turns
+* Luck events and normal events now have separate odds settings on the game settings
+  page.  Previously, normal events were hardcoded at 20%.  Upgrading will set
+  both to 0.08 which seems about right.  (so, 0.16 chance of one of them total)
+* When "best seller of the universe" award is written to deeds.txt it appends
+  a linefeed between entries now.
+* Added to options to the bank: "All to wood" and "All to gold" since that's all
+  people really want to do anyway.
+* Fixed huge problem where a game that was "auto reset" after a tournament would stop
+  polling for timeouts and updating things causing people to "never log off" which would
+  effectively ruin the first day of the tournament.
+* I licensed some new intro music for the title screen, I think it sets the mood much better.
+* Servers now send a "i'm alive" message to the main license server every 15 minutes,  if
+  the license server doesn't receive a message within 20 minutes it will get delisted from
+  our server list. (this is only applicable if you have 'advertising' turned on which the
+  majority of licensed servers actually don't)
+* Fixed problem where Yang's option 1 didn't always work and could cause a client flash hang. (thanks
+  mimifish)
+* If you change the server port address it now warns you that a restart is required to have it
+  take effect.
+
+** what's new in 0.78 **
+
+* Now compatible with Flash 6.  The GET command in Flash 6 is sending a & where it used
+  to send a ? - the FQ .exe was modified to accept both types.
+* The delay between reconnects to the Auth server is now 30 seconds instead of 15. 
+* FQ will now not load if another instance of FQ is already running.  This was added
+  at the request of systems that run FQ remotely and sometimes had more than one
+  instance going accidently, which caused a lot of problems. 
+
+** what's new in 0.77 **
+
+* If a player crashes while dealing with a customer he will still get credit
+  for the sale, he'll be mailed about it.  (idea from Mimifish)
+* Battle BP awards are now figured on a curve, more BP gets a lower
+  percent so we don't have such outrageous BP's per day.
+* Chances of missing and soul striking are now lower.
+* Tournament mode finished, will not announce messages during the last
+  5 days of the tournament in the log and automatically reset the day
+  after the winner is declared at midnight.  
+* The game reset option no longer changes all settings back to default
+* Added "Library" to Spirit University
+* Added new "generic text viewer thing" in the flash, will make stuff
+  easier for me
+* Added "Book of Deeds" to library (text is stored in deeds.txt in the main
+  FQ dir, not stored in DATA because it should stay even after a reset)
+* Added ability to see old news in the library
+* Added TTS (text to speech) support so FQ could announce
+  logons by name.  Can also repeat chat.  This is really just
+  a fun thing I've been wanting to play with, no real use.. :)
+
+  (this requires that Microsoft's SAPI 5.1 is installed, if it
+  isn't, FQ will still run but won't talk)
+* Adjusted the prices of transportation a bit, I'll probably allow this to
+  be editted by text file, internally it's setup for it but just have not
+  set up the file yet.
+* Attackers now have a slight advantage as far as Soul smashes and missing
+  goes.
+
+The tournament options are not tested that well, you better watch them
+closely, especially the "automatic reset" at midnight. 
+
+** what's new in 0.76 **
+
+* Getting within 50 bucks of a customers limit now gives you the
+  extra 10 BP, before it was only giving the within 100 limit.. whups
+* Players can now pay 1 gold to change their handle.  (the new option
+  is on the stat/inventory screen) - No flash was modified so the
+  0.75 flash source is still accurate.
+* You can no longer enter accented characters for your name, it was
+  throwing off the rankings.
+* Color codes can no longer be used in public announcements, it
+  was only a matter of time before somebody figured out how to fake
+  news items using it...  
+* Adjusted the values of the soft sell items a bit, it was
+  too easy.
+
+** what's new in 0.75 **
+
+* A crash bug was fixed, this also may have caused people to sometimes lose
+  sales.
+* News was split up into two sections, people that don't want to see all
+  the attack messages now don't have too.
+* You can no longer get "wasted turns".  This was here originally
+  because I was going to have kind of a popularity meter that
+  caused less wasted turns but I've changed the design, so now
+  it was just frusterating, so it's gone.
+* The daily log can now format URL's, just enter them in brackets
+  like this: [www.rtsoft.com] and it will color and make them clickable.
+  It does add http:// to keep people from doing file:// type of 
+  hijinx and won't crash on nested brackets, etc.
+* Right-Click banning now works on off-line players	 (thanks WC)
+* Right-Click kicking now works from the choose player to edit menu
+* Help pages shouldn't prompt you to download Japanese char sets anymore..
+* Soft sell values are now in multiples of 50, a few more lower item
+  soft sells are now available
+* Signup screen graphics were updated a tad
+* Added "Server Settings" to main menu, this way players can check out the
+  settings to see if they want to play rather than wasting a player
+  slot
+* Help & Info, Server Settings and Player Rankings buttons now show
+  up right away when starting FQ, this way they can read about the game
+  even if there are technical problems. (like playing from AOL)
+* I'm now converting %5C to /, there seems to be a browser/flash version that
+  is sending %5C's instead of /'s sometimes, seems pretty rare but
+  if it helps support another platform...
+* Inventory screen now shows ranking #.
+* Html player ranking now shows #.  So people can say "I'm in 87th place"
+  easier.
+* Hard and soft sell text is now editable in hard_sell.txt and soft_sell.txt
+* Added about 20 new texts to soft sell, rebalanced.  (thanks Foxxie)
+* When "visiting" another player it will show what his transportation is.
+* After battle "quotes" are now also sent to the other player involved, to be sure
+  he won't miss a choice insult (in addition to the newspaper, crime section)
+* If you get within 50, you get a +10 bonus in addition to the great trade bonus
+  specified in the config.
+* Fixed a small bug where an "over the limit" hard sell wouldn't
+  make a customer more mad, now it does, just like soft sell
+* Instead of just "on now" you will see a much more descriptive text on the server
+  console and with the /all command from the cafe
+* You can set the admin email address on the game config screen, this will
+  show up on the Server Settings html to players.
+
+
+** what's new in 0.73 **
+
+* Minimizing now sends the server to the tray.  Right click will brink up a
+  quick menu, left click will bring the server back.
+* Bank flash graphics updated
+* Bank input box defaults to show how many tags you can trade
+* Police protected can now be editted in player editor
+* You can type :) and ;) in battle messages now (it was stripping
+  too much)
+* Bank now always shows correct number of tags
+* Default top player bonus is now 20 instead of 100.
+* Starting HP and strength can now be set in editor.
+* You can no longer hit for "0" hp.
+* You can now click the collumns in the player editor to sort by name, id or
+  IP address.  (good for finding dupe accounts!)
+* Removed auto center code for the custom server message - this way you can
+  add color or hitlinks and just add spaces in the beginning yourself if
+  you want it centered.
+* Pressing ENTER from the main screen will no longer just kill the server
+* If you kick someone while he's chatting he will now be shown an error
+  message rather than continuing to hammer the server with junk requests.
+* The graveyard button was removed until I have a use for it (no more
+  error messages will show up in the log from clicking it)
+* Added some new music and sound effects to visit competition, hospital.
+* Added general store, you can buy hearses.
+* Psych upgrades can now be changed in the player editor, was broken before
+* Psych abilities have been expanded, up to 5 psych things can happen
+  depending on level.
+* Attacking BP awards were doubled from the last update, should be about right now.
+* Lucky Sparrow's show senders name
+* Fixed bug where new users were not being counted as "logons per day".
+* When a new user creates an account a the logon noise is played now too.
+* Updated the help html's a bit to cover some of the new features
+
+** what's new in 0.72 **
+
+* "Missing" in battle no longer actually takes HP...
+* Added bank
+* Some yangs pricing mismatch problems fixed
+* Fighting has been nerfed a bit
+
+** what's new in 0.71 **
+
+* Player rankings show "protected"
+* "look" from view competition button works
+* Typo fixed in paint flowers event
+
+
+** what's new in 0.70 **
+
+* Server now reconnects to logon server after changing system settings
+* Rankings html starts with a black bg instead of white
+* "My sister said not to by that when he was alive" was fixed (thanks Tal)
+* Added psychological skill
+* Ranking code is 3 times faster
+* html rankings are not updated more than every 15 minutes now
+* Worked on Yang's a bit, one new option, now yangs graphic and sound
+  are loaded separately.
+* You can get kicked out of yangs - but the next day you can get in.
+* Added church (skeleton of it, anyway)
+* New user sequence was cleaned up a litte
+* Top three players of the day get bonuses now (1/2 and 1/4 for 2nd and 3rd)
+* Server updates game info with RTsoft after maint, "days left" won't be
+  wrong anymore on the RTsoft server list
+* Server can now automatically handle things if the license server is physically
+  moved without rebooting.  (It will re-query rtsoft for it's location on every
+  reconnect attempt now)
+* Added university, players can buy stuff
+* Stats screen updated to show new stats
+* Players can attack other players
+* Players can steal from other players
+* More fortune cookies added
+
+
+** 0.6 beta one is released **

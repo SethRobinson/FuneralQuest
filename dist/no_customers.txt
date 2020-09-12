@@ -1,0 +1,38 @@
+//This file holds the random strings that we show when no customers appear.
+//By defining differen ranges, you can have people with high or low experience get certain messages.
+
+//*************************************************************
+range|-229999999|299999999
+
+start_entry
+message|Time passes slowly.  Your door remains unshadowed.
+start_entry
+message|You wait for a while.  Nothing happens.
+start_entry
+message|You stare at the door as if commanding it to open.  It doesn't.
+start_entry
+message|The clock's ticking quietly mocks you.  People walk by, they just don't walk in.
+start_entry
+message|Nothing's happening today, you wonder what's on FOX.
+start_entry
+message|The seconds tick away.  If only you knew how to play solitaire.
+start_entry
+message|The only thing dead around here is your business.
+start_entry
+message|Yet another Nancy Drew book passes through your hands.
+start_entry
+message|If only you could bend space and time, you wouldn't have this headache.
+start_entry
+message|You kill some time listening to MP3's.  Too bad about Napster...
+start_entry
+message|You're getting quite good at rolling a quarter over your knuckles.
+start_entry
+message|No one comes in, maybe you can start drinking on the job.
+start_entry
+message|You awake with a start, you must have dozed off.
+start_entry
+message|You wait a while but nothing happens.  When will someone die already?
+start_entry
+message|Someone is coming..wait, no, he went into a different parlor.
+start_entry
+message|No one appears.  You spend the time sweeping up and dusting caskets.

@@ -1,0 +1,2036 @@
+<!-- This document was originally prepared by Joe Johnston <jjohn@taskboy.com>.  -->
+<html>
+<head>
+<title>Funeral Quest: Scripting Guide</title>
+<meta http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+<!--
+BODY            {  color:      white;
+                   background: #666666;
+                   background-image: url('graveyard.jpg');
+		   margin-top: 0;
+		   margin-left: 0;
+                } 
+
+A:link		{  color: #CC6600;
+                   text-decoration: none;
+                }
+
+A:visited       {  color: #999966;
+                   text-decoration: none;
+		}
+
+A:hover         {  color: #CCCC66; 
+                   text-decoration: underline;
+                }
+
+TD              {
+                  font-size: 11px;
+                  line-height: 15px;
+		}
+
+TH		{ font-size:   13px;
+                  line-height: 17px;
+                }
+
+.text           {  font-family: Verdana, Arial, Helvetica, san-serif;
+		   color:       white;
+                   font-size:   11px;
+		   line-height: 15px;
+                }
+
+.smHeading      {  font-size:   15px;
+                   line-height: 19px;
+		   font-weight: bold; 
+		   background:  #FFCC33;
+		   color:       #000000;
+		   border:      1px solid white;
+		   margin-left: 3px;
+		   margin-right: 3px;
+                }
+
+
+.inset		{ border: white 1px solid;
+                }
+
+.waku_med_gray  {  border: thin #999966 solid; }
+.graveyard_back {  background-image: url('graveyard.jpg'); 
+                   background-repeat: no-repeat; 
+		   background-position:  center; 
+                }
+
+.frame_left     {  background-image: url('frame_bg.gif'); 
+                   background-repeat: repeat-x;
+		}
+
+
+-->
+</style>
+</head>
+
+<body>
+
+<div align="center">
+<!-- header -->
+<table width="700" border="0" cellpadding="0" cellspacing="0" style="background: black">
+  <tr> 
+    <td height="71" valign="top" colspan="5"> 
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="frame_left">
+        <tr> 
+          <td width="32" height="2"></td>
+          <td width="91"></td>
+          <td width="32"></td>
+          <td width="100"></td>
+          <td width="32"></td>
+          <td width="66"></td>
+          <td width="29"></td>
+          <td width="57"></td>
+          <td width="38"></td>
+          <td width="69"></td>
+          <td width="32"></td>
+          <td width="50"></td>
+          <td width="38"></td>
+        </tr>
+        <tr> 
+          <td height="18"></td>
+          <td valign="top"></td>
+          <td></td>
+          <td valign="top"></td>
+          <td></td>
+          <td valign="top"></td>
+          <td></td>
+          <td valign="top"></td>
+          <td></td>
+          <td valign="top"></td>
+          <td></td>
+          <td valign="top"></td>
+          <td></td>
+        </tr>
+        <tr> 
+          <td height="33"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="99" width="3"></td>
+    <td colspan="3" valign="top" height="99"><img src="fq_title_2.gif" width="350" height="97"></td>
+    <td width="464" height="99"></td>
+  </tr>
+  <tr> 
+    <td height="25" width="3">&nbsp;</td>
+    <td valign="top" colspan="1" height="25"> 
+      <div align="left" class='text' style="color: #FFCC33; font-weight: bold; font-size: 17px; line-height: 21px;">
+      Funeral Quest Scripting Guide
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+     <td colspan="14" height="20">&nbsp;</td>
+  </tr>
+
+  <tr>
+   <td colspan="15"><table width="550" cellpadding=0 cellspacing=0 border=0>
+     <tr>
+       <td width=40>&nbsp;</td>
+       <td valign="top" class="text">
+       <p><a class="smHeading" name="top">Contents</a></p>
+
+       <ul>
+         <li><A href="#purpose">Purpose</a>
+	 <li><a href="#syntax">Syntax</a>
+	 <li><a href="#globals">Pre-defined global variables</a>
+	 <li><a href="#functions">Functions</a>
+	     <ul>
+	        <li><a href="#f_player">Player functions</a>
+		<li><a href="#f_flash">Flash client functions</a>
+		<li><a href="#f_game">Game properties</a>
+		<li><a href="#f_broadcast">Broadcast functions</a>
+		<li><a href="#f_utils">Utility functions</a>
+	     </ul>
+	 <li><a href="#items">Creating items</a>
+	 <li><a href="#places">Scripting places</a>
+	 <li><a href="#events">Scripting events</a>
+	 <li><a href="#maint_hooks">Maintenance hooks</a>
+	 <li><a href="#flash_client">Notes about the Flash client</a>
+       </ul>
+
+       <p><a name="purpose" class="smHeading"> Purpose </a> (<a href="#top">top</a>)</p>
+
+       <p><i>This document was originally prepared by 
+       <a href="http://taskboy.com/">Joe Johnston</a> for inclusion with a 
+       future release of RTSoft's Funeral Quest.</i>
+
+       <p>This guide introduces the scripting environment of 
+       <A href="http://www.rtsoft.com/fq/">Funeral Quest</a> to 
+       novice programmers.  It is expected that the reader has some background
+       in a functional programming language like C, Pascal or JavaScript.  
+       Those already familar with scripting Teenage Lawnmower may wish to skip 
+       this document in favor of the more brief 
+       <a href="scripting.htm">Scripting Information</a> page. 
+       </p>
+
+       <p>Funeral Quest is composed of two parts: the win32 Funeral Quest server 
+       and the Macromedia Flash client.  The client and server talk to each other 
+       using standard HTTP, encoding their arguments in GET strings (like a 
+       <a target="_blank" href="http://www.xfront.com/REST-Web-Services.html">REST</a> 
+       web service).  The details of that protocol are not covered in this 
+       document and aren't needed to understand the Funeral Quest scripting 
+       environment.  The API described below abstracts the client/server 
+       communication from the low-level HTTP calls.  However, it is important 
+       to understand that all scripting occurs on the server, not the client.
+       </p>
+
+       <p><b>Note:</b> All files referenced in this document are relative to
+       the directory in to which Funeral Quest was installed.  In other words, 
+       the root of the Funeral Quest directory, as far as this document and 
+       and fqserver.exe are concerned, is the directory in which the 
+       fqserver.exe is found.  Typically this is 
+       <code>C:\Program Files\FQServer</code>, but local conditions may vary.
+       </p>
+ 
+       <p><a name="syntax"  class="smHeading"> Syntax </a> (<a href="#top">top</a>)</p>
+       <p>The Funeral Quest scripting language (FQ-C) has syntax that bares a 
+       striking likeness to C, but without any pre-processing directives, 
+       for/while loops, case statements, memory management, arrays or 
+       user-definable types.  However, FQ-C does support branching, looping and 
+       methods for basic data maniplation.  FQ-C scripts are best kept simple and 
+       relatively small.</p>
+
+       <p>User-defined scripts must all be in unicode.  On Win98 and up, Wordpad
+       handles unicode correctly.  On Win2K and up, Notepad also handles unicode.
+       It is possible to get Emacs to use read unicode using the Mule-USC module, 
+       but that is left as an excerise for the reader.</p>
+
+       <p>FQ-C supports the four data types described in Table 1.</p> 
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th>Data type</th><th>Description</th>
+       </tr>
+       <tr>
+         <td>String</td><td>One or more characters delimited by double quotes.</td>
+       </tr>
+       <tr>
+         <td>int</td><td>an integer value (32-bit signed int)</td> 
+       </tr>
+       <tr>
+         <td>float</td><td>a real number (32-bit signed float)</td> 
+       </tr>
+       <tr>
+         <td>vector3</td><td>3D vector (not used in FQ)</td> 
+       </tr>
+       </table>
+       <div style="font-weight: bold">Table 1: Values</div> 
+       </div>
+
+       <p>Of these four, strings and ints appear most frequently in code.  Values
+       are used as arguments to functions and may be stored in variables.  Values
+       are maniplated by using the operators found in Table 2.</p> 
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th>Operator</th><th>Description</th>
+       </tr>
+       <tr>
+         <td>=</td><td>Assignment</td>
+       </tr>
+       <tr>
+         <td>+</td><td>binary addition</td> 
+       </tr>
+       <tr>
+         <td>-</td><td>binary subtraction</td> 
+       </tr>
+       <tr>
+         <td>*</td><td>binary multiplication</td> 
+       </tr>
+       <tr>
+         <td>/</td><td>binary division</td>
+       </tr>
+       <tr>
+         <td>%=</td><td>modulus (division remainder)</td>
+       </tr>
+       <tr>
+         <td>==</td><td>boolean numeric equality</td>
+       </tr>
+       <tr>
+         <td>!=</td><td>boolean inequality test</td>
+       </tr>
+       <tr>
+         <td>&lt;</td><td>boolean numeric less than</td>
+       </tr>
+       <tr>
+         <td>&gt;</td><td>boolean numeric greater than</td>
+       </tr>
+       </table>
+       <div style="font-weight: bold">Table 2: Operators</div> 
+       </div>
+
+       <p>Variables, functions and labels begin with letters and can be followed 
+       by a reasonable number of letters, numbers or underscores.  Sometimes 
+       variables are declared before they are used so that the interpreter can 
+       recognize them later when the variables are used.  Variables are declared
+       in a simple statement that contains the data type of the variable and 
+       the variable's name. 
+
+       <pre>
+          String current_player;
+          int gold_tags;
+       </pre>
+
+       <p>There are no default values for variables.  Do not try to get the value
+       of a variable that has only been declared and not assigned to.  Variables
+       may be declared and assigned to in the same statement.  For instance,
+       the string "hello, world" can be assigned to the variable 
+       <code>hello</code> using the assignment operator.</p>
+       
+       <pre>
+          // demostrate assigment
+          String hello_str = "hello, world";
+       </pre> 
+
+       <p>The listing above begins with a comment.  Comments begin with two 
+       forward slashes.  The script interpreter ignores everything to the right 
+       of those slashes.  Comments are for the coder's benefit, not the 
+       computer's.</p>
+
+       <p>Although variables, labels and functions are not case-sensitive in FQ-C,
+       they are in most other languages.  Consider using a consistent casing for 
+       all of these elements to avoid confusion.</p> 
+
+       <p>The binary math operators may be combined with the assignment operators.
+       </p>
+
+       <pre>
+           // take the current value of i and multiply it by 4
+           i *= 4; 
+       </pre>
+
+       <p>Note that FQ-C assignments expect immediate values.  That is arbitrary
+       expressions aren't allowed on the right hand side of an assigment statement.
+       Instead, only a variable, function call or raw value should be used.</p>
+
+       <pre>
+          // These are all acceptable
+          int stakes = 4;                           // ok, raw value
+          string headstone += " rest in peace";     // ok, appends to headstone
+          int gtags = GetTags(i_my_id, C_GOLD_TAG); // ok
+
+          // These all are broken
+          gtags =  gtags * 4;                // gtags remains the same
+          name  = "Xander" + " " + "Harris"; // name gets "Xander"
+          hp    = GetMaxHP(i_my_id) / 4;     // unknown
+       </pre>
+
+       <p>Strings may also be concatenated.</p>
+       <pre>
+          string firstname = "Buffy";
+          string lastname  = "Summers";
+          string fullname;
+
+          fullname += firstname;
+          fullname += " ";
+          fullname += lastname;
+
+          LogMsg(fullname);  // prints "Buffy Summers" to log
+       </pre>
+
+       <p>Inside of strings, there are sequences of characters that have 
+       special meanings.  Some of these sequences (beginning with a backtick ( ` )) 
+       are interpreted by the Flash client when displayed and other sequences 
+       (beginning with a backslash ( \ )) are interpreted by the 
+       scripting engine before the Flash client sees them.  Table 3 lists 
+       escape sequences used represent special characters in strings.  Table 13 lists
+       escape sequences recognized by the Flash Client.</p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+          <th>Sequence</th><th>Description</th>
+       </tr>
+       <tr>
+          <td>\n</td><td>Generates a new line in the text</td>
+       </tr>
+
+       <tr>
+         <td>\\</td><td>Generates one backslash</td>
+       </tr>
+
+       <tr>
+         <td>\"</td><td>Generates a double quote</td>
+       </tr>
+
+       <tr>
+          <td>$<i>&lt;variable name&gt;</i>$</td>
+	  <td>Insert the value of the given script variable into the string</td>
+       </tr>
+       </table>
+       <div style="font-weight: bold">Table 3: String escape sequences</div>
+       </div>
+       
+       <p>In FQ-C, every line of code contains one <i>statement</i>, at most.  
+       Statements are somewhat like sentences in English; they represent a 
+       complete thought.  Statements end with semi-colons.  <i>Expressions</i>
+       are bits of code that evaluated to be true of false (expressions that 
+       evaluate to zero are false while any other value is true).  Expressions 
+       do not end in semi-colons.  Expression produce values and are only used 
+       in the condition test of <code>if</code> blocks.  Statements do not produce 
+       values and are never used used in condition tests (assigments aren't allowed
+       as condition tests as in C).
+
+       <p>FQ-C supports conditional execution.  This is done with 
+       C-style <code>if</code> blocks, which has the following form.   
+       </p>
+
+       <pre>
+           if (<i>expression</i>) {
+               <i>statement1</i>;
+               <i>statement2</i>;
+               ...
+            }
+       </pre>
+
+       <p>If the <i>expression</i> evaluates to true, then the statements 
+       appearing between the curly braces are executed.  FQ-C has no 
+       <code>else</code> statement.  Expressions typically use the boolean 
+       operators listed in Table 1.</p>
+
+       <pre>
+          if (i < 0) 
+          {
+             LogMsg("i is negative");
+          }        
+       </pre>
+
+       <p>The only data type that that boolean operators work with is int.  Unlike C, 
+       the braces are required and the opening brace must be on the line following the
+       conditional.
+
+       <p>Although FQ-C doesn't support traditional looping constructs like 
+       the C-style <code>for</code> and <code>while</code>, it does have the rather
+       notorious <code>goto</code> statement.  Used with restraint, 
+       <code>goto</code> can be used to simulate the looping and control 
+       structures of C.   The basic syntax of <code>goto</code> is this:</p>
+
+       <pre>
+          <i>goto_label</i>:
+            <i>statement1</i>;
+            <i>statement2</i>;
+          goto <i>goto_label</i>;
+       </pre>
+
+       <p>When a <code>goto</code> statement is executed, the interpreter jumps 
+       to the place in the code where the goto label occurs.  Goto labels end 
+       with a colon, not a semi-colon.</p>
+
+       <p>Simulate a C-style <code>while</code> (or <code>for</code>) like this:
+
+       <pre>
+          // sum i with itself until that number is greater than 100
+          int i = 0;
+          int sum;
+
+          loop:
+            if (i < 10) 
+            {
+               i += 1;
+               sum += i;
+               goto loop;
+            }
+
+          LogMsg("i is $i$ and sum is $sum$");
+       </pre>
+
+       <p>Functions are "mini-scripts" that exists inside larger scripts.  
+       In FQ-C, user-defined functions cannot accept parameters or 
+       return values.  Functions are good for collecting related routines 
+       together in one place.  Functions must be defined before they are 
+       used.  Functions take the following form:</p>
+
+       <pre>
+          <i>return type</i> <i>function name</i> (<arguments>)
+          {
+             <i>statement1</i>;
+             <i>statement2</i>;
+             ...
+          }
+       </pre>
+
+       <p>As was mentioned, user-defined functions never return a value.  
+       Therefore, all user-defined functions return <code>void</code>.  The 
+       function name is not case sensitive.  Next comes the list of parameters
+       accepted by this function in parentheses, but since user-defined 
+       functions never accept arguments, only an empty parentheses pair appears.</p>
+
+       <pre>
+         void logger ()
+         {
+             LogMsg("I like cheese");
+             return;
+         }
+
+         void Main ()
+         {
+            // call logger
+            logger();
+         }
+       </pre>
+ 
+       <p>Unlike C, all function arguments must appear on the same line.</p>
+ 
+       <p>All scripts should contain three functions: OnCreate(), Main(), and 
+       OnKill().  The interpreter calls these functions in that order.  If 
+       these functions aren't present, a warning is generated in the server 
+       log.  OnCreate() is typically used to define local variables visible in 
+       in the entire script.  Main() is expected to contain the main block
+       of code to execute. OnKill() is a good place to take care of any clean-up 
+       that's needed before the script exits.  While it is possible to put all the 
+       action of a script in only of one of these functions (say OnKill()), it's 
+       better to use these functions in their intended role.  Maintainers will be 
+       find a script that puts all the code in OnKill() jarring.</p>
+
+       <p>It is possible to control the visibility of variables in scripts.  
+       A variable's scope is limited to the file in which it was declared.  
+       This is called a local variable.  Local variables are created when 
+       the script is run and are destroyed after OnKill() is called.  When 
+       When the script is called again, the local variables are recreated.
+       Remember that Funeral Quest can have many simultaneous users at once.
+       Each instance of the script gets its own local variable.
+       </p>
+
+       <p>Up to this point, only local variables have been shown in the code 
+       listings.  It is possible to define global variables that are visible
+       to all scripts and aren't destroyed until the server shuts down.  To 
+       declare a global variable, simply prepend 'global' to a variable's 
+       declaration.</p>
+
+       <pre>
+          global int num_vampires;
+       </pre>
+
+       <p>Through the careful used of local variables, it is possible to 
+       simulate argument passing to user-defined functions.  Consider this
+       code.</p>
+
+       <pre>
+       void OnCreate()
+       {
+          String _logger;
+       }
+       
+       void logger ()
+       {
+         string tmp = "From logger: ";
+         tmp += _logger;
+         StringExpand(tmp);
+         LogMsg(tmp);
+       }
+
+       void Main () 
+       {
+          int i = 10;
+          _logger = "i is $i$";
+         logger();
+       }
+       </pre>
+
+       <p>The argument to logger is passed in a local variable called _logger. 
+       So that <code>i</code> may be interpolated correctly, 
+       the <code>StringExpand()</code> function, which interpolates variables in 
+       strings,  must be called before passing the string to LogMsg().  
+       </p>
+
+       <p><a name="globals" class="smHeading">Pre-defined Global Variables</a> (<a href="#top">top</a>)</p>
+
+       <p>Table 4 contains a list of global variables defined in init.c that 
+       are available in all scripts.  Variable names appearing in all capital 
+       letters an begining with "C_" should be considered constants.  That is,
+       do not attempt to change the value of such a variable.</p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th>Name</th><th>Description</th>
+       </tr>
+
+       <tr>
+         <td>C_WOOD_TAG</td>
+         <td>Symbolic constant that for wood tags.  Used as an argument to
+         GetTags(), ModTags() and SetTags(). 
+         </td>
+       </tr>
+
+       <tr>
+     <td>C_SILVER_TAG</td>
+     <td>Symbolic constant that for silver tags. See C_WOOD_TAG for usage.
+     </td>
+       </tr>
+
+       <tr>
+     <td>C_SILVER_TAG</td>
+     <td>Symbolic constant that for silver tags. See C_WOOD_TAG for usage.
+     </td>
+       </tr>
+
+       <tr>
+         <td>C_CUSTOM_FIRE_ALARM</td>
+     <td>Symbolic constant for the fire alarm item.  Used in
+     GetCustomByID(), ModCustomByID() and SetCustomByID() 
+     </td>
+       </tr>
+
+       <tr>
+         <td>C_CUSTOM_SAFE</td>
+     <td>Symbolic constant for the safe item.  See C_CUSTOM_FIRE_ALARM
+     for details.</td>
+       </tr>
+
+       <tr>
+         <td>C_CUSTOM_PADLOCK</td>
+     <td>Symbolic constant for the padlock item.  See C_CUSTOM_FIRE_ALARM
+     for details.</td>
+       </tr>
+
+       <tr>
+         <td>C_CUSTOM_LOCKPICK</td>
+     <td>Symbolic constant for the lockpick item.  See C_CUSTOM_FIRE_ALARM
+     for details.</td>
+       </tr>
+
+       <tr>
+         <td>C_CUSTOM_PADLOCK_STRENGTH</td>
+     <td>Symbolic constant for the remaining strength of the padlock.  
+     See C_CUSTOM_FIRE_ALARM for details.</td>
+       </tr>
+
+       </table>
+       <div style="font-weight: bold">Table 4: Constants</div> 
+       </div>
+
+       <p>In addition to constants, there are some mutable global variables. 
+       Although changable, these variables almost never need to be modified  
+       by scripts.</p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th>Name</th><th>type</th><th>Description</th>
+       </tr>
+
+       <tr>
+         <td>i_my_id</td><td>int</td>
+     <td>Contains the ID of the current player.</td>
+       </tr>
+
+       <tr>
+         <td>i_my_result</td><td>int</td>
+     <td>Populated with the value of the button pressed by the user.</td>
+       </tr>
+
+       </table>
+       <span style="font-weight: bold">Table 5: Globals</span>       
+       </div>
+
+       <p><a name="functions"  class="smHeading"> Functions </a> (<a href="#top">top</a>)</p>
+       
+       <p>The heart of the scripting environment is the library of API 
+       functions.  Most of the function names are prefixed with "Get", "Mod"
+       and "Set".  All library functions return at most one value, which is
+       typically a string or int.</p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th><a name="f_player">Name</a></th><th>Parameters</th><th>Description</th>
+       </tr>
+
+       <tr><td valign="top">GetCustomByID</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_custom_id</td><td valign="top">Given a player_id and an inventory_index, return the amount of this item owned by the player.</td></tr>
+       <tr><td valign="top">GetHomeNameFromID</td><td valign="top">int i_player_id</td><td>Given a player_id, return the name of the associated Funeral Parlor.</td></tr>
+       <tr><td valign="top">GetLuck</td><td valign="top">int i_player_id</td><td>Given a player_id, return this player's luck amount.</td></tr>
+       <tr><td valign="top">GetMaxHP</td><td valign="top">int i_player_id</td><td>Given a player_id, return this player's maximium HP.</td></tr>
+       <tr><td valign="top">GetNameFromID</td><td valign="top">int i_player_id</td><td>Return the player's "in-game" name for the given player_id.</td></tr>
+       <tr><td valign="top">GetPlayerFights</td><td valign="top">int&nbsp;i_player_id</td><td>Given a player_id, return the number of fights this player has been in for the current game day.</td></tr>
+       <tr><td valign="top">GetPolice</td><td valign="top">int i_player_id</td><td>Given a player_id, return 1 if this player has police protection (not eligible for player ambushes) or 0 otherwise.</td></tr>
+       <tr><td valign="top">GetPsychUpgrades</td><td valign="top">int i_player_id</td><td>Given a player_id, return the number of psychology upgrades this player has received.</td></tr>
+       <tr><td valign="top">GetRankPercent</td><td valign="top">int i_player_id</td><td>Given a player_id, return the percentage of all the players that this player is better than.  This number will be from 1-100 and can be convert a percentile by taking 100 and substracting this function's return value from it (i.e. 100 - rank_percent). </td></tr>
+       <tr><td valign="top">GetStrength</td><td valign="top">int i_player_id</td><td>Given a player_id, return this player's strength attribute.</td></tr>
+       <tr><td valign="top">GetTags</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_tag_type</td><td>Given a player_id and a tag type, return the number of tags of the given type that the player has.  Use the symbolic constants to specify the type of tag.</td></tr>
+       <tr><td valign="top">GetTodaysBPs</td><td valign="top">int i_player_id</td><td>Given a player_id, return this player's BP count for the current day's play.</td></tr>
+       <tr><td valign="top">GetTotalBPs</td><td valign="top">int i_player_id</td><td>Given a player_id, return the total number of Burial Points this player has accumulated in this game or tourney.</td></tr>
+       <tr><td valign="top">GetTotalBurials</td><td valign="top">int i_player_id</td><td>Given a player_id, return the total number of burials for this player.</td></tr>
+       <tr><td valign="top">GetTransportationFromID</td><td valign="top">int i_player_id</td><td>Given a player_id, return the text name of the player's transportation.</td></tr>
+       <tr><td valign="top">GetTurns</td><td valign="top">int i_player_id</td><td>Given a player_id, return the number of turns this player has left.</td></tr>
+       <tr><td valign="top">IsPlayerOnNow</td><td valign="top">int i_player_id</td><td>Returns 1 if the given player_id is currently online.  0 otherwise.</td></tr>
+       <tr><td valign="top">ModCustomByID</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_custom_id, int&nbsp;i_mod_amount</td><td valign="top">Given the player_id, the item index and a integer, modify the amount of the given custom item owned by this player.</td></tr>
+       <tr><td valign="top">ModLuck</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and an integer amount, adjust the player's Luck.  Range checking is implement so that luck is always between 1-100.</td></tr>
+       <tr><td valign="top">ModMaxHP</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and integer amount, adjust the player's HP cap.</td></tr>
+       <tr><td valign="top">ModPlayerFights</td><td valign="top">int&nbsp;i_player_id, int i_mod_amount</td><td>Given a player_id and an integer amount, adjust the number of fights this player has been in for the current game day.</td></tr>
+       <tr><td valign="top">ModPsychUpgrades</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and an integer amount, adjust the number of psych upgrades a player has.</td></tr>
+       <tr><td valign="top">ModStrength</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and integer amount, adjust this player's strength attribute.</td></tr>
+       <tr><td valign="top">ModTags</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_tag_type, int&nbsp;i_mod_amount</td><td>Given a player_id, a tag type and an integer amount, adjust the player's total tag count for the given type of tag.  Return the new tag count.</td></tr>
+       <tr><td valign="top">ModTodaysBPs</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and integer amount, adjust this player's BP count for the day.  Total BP count is also updated.  Range checking is also implemented so that BP totals don't go negative.</td></tr>
+       <tr><td valign="top">ModTotalBPs</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and an integer amount, adjust this player's total BP count.  Most scripts should avoid this function in favor of ModTodaysBPs.</td></tr>
+       <tr><td valign="top">ModTotalBurials</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and an integer amount, adjust this player's burial count.</td></tr>
+       <tr><td valign="top">ModTurns</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_mod_amount</td><td>Given a player_id and integer amount, adjust this player's remaining number of turns.</td></tr>
+       <tr><td valign="top">SetCustomByID</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_custom_id, int&nbsp;i_mod_amount</td><td valign="top">Given the player_id, the item index and an integer amount, directly set the amount of this item owned by this player.</td></tr>
+       <tr><td valign="top">SetPolice</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_police_status</td><td>Given a player_id and an integer status, give this player police protection (when i_police_status is 1) or remove it (when i_police_status is 0).</td></tr>
+       <tr><td valign="top">SetTags</td><td valign="top">int&nbsp;i_player_id, int&nbsp;i_tag_type, int&nbsp;i_mod_amount</td><td>Given a player_id, a tag type and an integer amount, directly set the number of tags of the given type this player has.</td></tr>
+
+       </table>
+       <span style="font-weight: bold">Table 6: Player functions</span>       
+       </div>
+
+       <p>Below are functions related to the Flash client.  These are used to format
+       the screens that the player sees.</p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th><a name="f_flash">Name</a></th><th>Parameters</th><th>Description</th>
+       </tr>
+
+       <tr><td valign="top">AddButton</td><td valign="top">string&nbsp;packet, int&nbsp;button_loc, string&nbsp;label, int&nbsp;value</td><td>Into packet, add a button in location button_loc (1-5) with the given label and value.  If the user presses the button, value will be returned in the global i_my_return.</td></tr>
+       <tr><td valign="top">AddButtonChangeName</td><td valign="top">string&nbps;packet, int&nbsp;button_loc, string&nbsp;label</td><td>Connects to the internal change name code, used in the scripted parlor status screen.</td></tr>
+       <tr><td valign="top">AddButtonHome</td><td valign="top">string&nbsp;packet, int&nbsp;button_loc, string&nbsp;label</td><td>Takes player back to their parlor.</td></tr>
+       <tr><td valign="top">AddButtonStore</td><td valign="top">string&nbsp;packet, int&nbsp;button_loc, string&nbsp;label</td><td>Bring users back to the main Di-Mart store screen.</td></tr>
+       <tr><td valign="top">AddButtonTownMap</td><td valign="top">string&nbsp;packet, int&nbsp;button_loc, string&nbsp;label</td><td>Takes player to the town map.</td></tr>
+       <tr><td valign="top">AddCustom</td><td valign="top">string&nbsp;packet, string&nbsp;name, string&nbsp;value</td><td>Directly set a Flash client variable.  Particularly useful for those hacking the Flash client code.</td></tr>
+       <tr><td valign="top">AddUpdateBPs</td><td valign="top">string&nbsp;packet</td><td>Forces client to update daily and global BP totals.</td></tr>
+       <tr><td valign="top">AddUpdateLuck</td><td valign="top">string&nbsp;packet</td><td>Updates player luck.</td></tr>
+       <tr><td valign="top">AddUpdateStats</td><td valign="top">string&nbsp;packet</td><td>Updates nearly all player stats.  Use sparingly to conserve bandwidth.</td></tr>
+       <tr><td valign="top">AddUpdateTags</td><td valign="top">string packet</td><td>Refresh the client's tag display.</td></tr>
+       <tr><td valign="top">AddUpdateTurns</td><td valign="top">string packet</td><td>Refresh the number of turns the player has left.</td></tr>
+       <tr><td valign="top">MailContinueButton</td><td valign="top">int&nbsp;player_id</td><td>Player must hit a continue button before reading more mail.  Useful when sending pictures.</td></tr> 
+       <tr><td valign="top">SendPacketAndWait</td><td valign="top">string packet</td><td>Pause the script until the user has pressed a button.</td></tr>
+       <tr><td valign="top">SendPacketAndWaitOverlay</td><td valign="top">string packet</td><td>Same as SendPacketAndWait() but creates a pop-up window.  Used only for "enter player name".</td></tr>
+       <tr><td valign="top">SendPacketAndWaitStats</td><td valign="top">string packet</td><td>Used only for the stat screen.</td></tr>
+       <tr><td valign="top">SetLocation</td><td valign="top">string label</td><td>Set the name of the location to the given label.  Useful for properly identifying the location while at the bar.</td></tr>
+       </table>
+       <span style="font-weight: bold">Table 7: Flash client functions</span>       
+       </div>
+
+       <p>Below are functions that return game properties.  These functions do not 
+       directly affect a particular player.</p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th><a name="f_game">Name</a></th><th>Parameters</th><th>Description</th>
+       </tr>
+
+       <tr><td valign="top">AddToNews</td><td align="top">string msg</td><td>Add a news item to the front page</td></tr>
+       <tr><td valign="top">GetDay</td><td valign="top"><i>none</i></td><td>Returns the age of the game in days.</td></tr>
+       <tr><td valign="top">GetRandomPlayerID</td><td valign="top">int&nbsp;i_not_me</td><td>Return a random player_id.  Set i_not_me to a player_id that should not be returned.  To get any player_id, pass this function -1.</td></tr>
+       <tr><td valign="top">GetTopPlayerID</td><td valign="top"><i>none</i></td><td>Return the player_id of the top player.</td></tr>
+       <tr><td valign="top">GetTourneyDaysLeft</td><td valign="top"><i>none</i></td><td>Return the number of days left in the current tourney.  0 indicates the the current day is the last day.  -1 indicates that the tourney ended yesterday. -2 indicates no tourney is active.</td></tr>
+
+       </table>
+       <span style="font-weight: bold">Table 8: Game properties</span>       
+       </div>
+
+       <p>There are several ways to communicate with particular players or all players 
+       at once.  Such communication is done through using the functions listed below.
+       </p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th><a name="f_broadcast">Name</a></th><th>Parameters</th><th>Description</th>
+       </tr>
+       <tr><td valign="top">AddToNews</td><td valign="top">string&nbsp;msg</td><td>Add msg to the front page news.</td></tr>
+       <tr><td valign="top">BroadCastTV</td><td valign="top">string&nbsp;msg</td><td>Blit a news item to the folks at the bar watching TV.</td></tr>
+       <tr><td valign="top">MailPicture</td><td valign="top">int&nbsp;i_player_id, string&nbsp;url</td><td>Given a player_id and URL, send this player a picture.  The picture will appear in the upper right window.  Use this with MailContinueButton().  URL's may be absolute or relative to the "public" folder in the FQ server directory. </td></tr>
+       <tr><td valign="top">MailText</td><td valign="top">int&nbsp;i_player_id, string&nbsp;message</td><td>Given a player_id and string, send this player a mail message.</td></tr>
+       </table>
+       <span style="font-weight: bold">Table 9: Broadcast messages</span>       
+       </div>
+
+       <p>There are several functions that aid scripting.  These don't directly affect
+       the game or players.</p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th><a name="f_utils">Name</a></th><th>Parameters</th><th>Description</th>
+       </tr>
+
+       <tr><td valign="top">LogMsg</td><td valign="top">string msg</td><td>Given a string, print msg to the FQ server log.  This is an excellent debugging tool.</td></tr>
+       <tr><td valign="top">RandomRange</td><td valign="top">int&nbsp;min, int&nbsp;max</td><td>Return an integer in the inclusive range between <code>min</code> and <code>max</code>.</td></tr>
+       <tr><td valign="top">Return</td><td valign="top"><i>none</i></td><td>return from a function call.</td></tr>
+       <tr><td valign="top">RunScriptNoReturn</td><td valign="top">string&nbsp;script_name</td><td>Run the given script.  The path is relative to FQ server root (that is, the directory where fqserver.exe is).  </td></tr>
+       <tr><td valign="top">StringExpand</td><td valign="top">string msg</td><td>Interpolate any variables in the given string.  Return interpolated string.</td></tr>
+
+       </table>
+       <span style="font-weight: bold">Table 10: Utility functions</span>       
+       </div>
+
+       <p><a name="items" class="smHeading"> Creating Items </a> (<a href="#top">top</a>)</p>
+
+       <p>It is possible to add new items to Funeral Quest that players may possess. 
+       Every player has 200 "slots" available for inventory.  It's better to 
+       think of these 200 slots as 200 key-value pairs.  The first five slots
+       are already used.  They are:<p>
+
+       <ol start=0>
+     <li>fire alarm
+     <li>safe
+     <li>padlock
+     <li>lockpick
+     <li>padlock strength
+       </ol>
+
+       <p>Sometimes, the values of these keys is simply 1 or 0.  It's enough
+       to know that the player has the item.  Sometimes the value indicates
+       quantity, as it does for lockpicks.  Finally, the value can indicate 
+       the integerity of an object, as it does for padlock strength.  The mod
+       designer is entirely responsible for defining how the item can be 
+       possessed by the player and how the player can use the item.</p>
+
+       <p>To make this more concrete, let's defined a new item called 
+       "body armor" that absorbs damage from opponents.  Currently there are 
+       no hooks in the scripting engine to control combat.  However, one way
+       to implement body armor is to simply boost the player's maximum HP.  Recall
+       that FQ already provides a mechanism for permanently improving HP, 
+       which is to take phys. ed. classes at Spirit U.  To preserve game 
+       balance, the body armor either needs to be priced similiarly to the 
+       phys. ed. classes or the armor needs to "depreciate" over time and use.
+       The depreciating armor model both provides the better example of the scripting
+       environment and provides another way to part players from their tags.</p>
+
+       <p>At first, it seems that there's no way to accurately depreciate the 
+       armor's integratity without hooks into the combat system.  However, by 
+       inspecting the player's daily number of fights, it it is possible to 
+       roughly appromixate damage to the armor.  When purchased, the armor 
+       can have a "strength" value, just like padlocks do.  During player
+       maintenance, a script can determine if the player engaged in combat 
+       and substract strength points appropriately.  When the armor's strength
+       points are gone, the item disappears from the player's inventory.</p>
+
+       <p>With this model in place, it's now possible to implement this item.
+       First, two new global integers are defined in <code>scripts/init.c</code>.
+       </p> 
+
+       <div class="inset">
+       <pre>
+       void Main()
+       {
+          // code removed...
+
+          // Body Armor item requires two inventory slots
+          global int C_CUSTOM_BODY_ARMOR          = 10;
+          global int C_CUSTOM_BODY_ARMOR_STRENGTH = 11;
+       }
+       </pre>
+       </div>
+       <div align="center">      <b>Listing 1: init.c</b></div>
+
+       <p>The existing lockpick model provides a solid template for how players  
+       can acquire body armor at Di-Mart.  In <code>scripts/store_supplies.c</code>,
+       the price armor and its strength are defined as script-wide
+       local variables in OnCreate().  The following lines can be added to the bottom
+       of that function.
+       </p>
+
+       <div class="inset">
+       <pre>
+         void OnCreate()
+         {
+            // code removed ...
+            // Body Armor stuff
+            int i_body_armor_price    = 6;
+            int i_initial_BA_strength = 3;
+         }
+       </pre>
+       </div>
+       <div align="center"><b>Listing 2: store_supplies.c</b></div>
+
+       <p>Next, it's time to define the screen that displays the armor and 
+       offers the user the chance to buy it.</p>
+
+       <div class="inset">
+       <pre>
+// Handle the BA acquistion
+void DisplayBodyArmor()
+{
+   loop:
+
+   // Display the wares
+   string p;
+   string msg = "It's a rough crowd that walks the path of the undertaker.\n";
+   msg += "\n`wEffect`y:  Increases your maximum HP.  Wears out over time.\n";
+
+   p = AddCustom(p, "st_url", "flash\\stuff\\body_armor.swf");
+
+   // Let's talk wallet size...
+   int curr_gt = GetTags(i_my_id, C_GOLD_TAG);
+
+   // Issue a warning about lack of funds
+   if (curr_gt < i_body_armor_price)
+   {
+      msg += "\nMmm.  I doubt you can afford these threads, Bub.";     
+   }
+  
+   // Report the condition of the existing armor (if any)
+   int has_ba = GetCustomByID(i_my_id, C_CUSTOM_BODY_ARMOR);
+
+   if (has_ba == 1)
+   {
+      int ba_str = GetCustomByID(i_my_id, C_CUSTOM_BODY_ARMOR_STRENGTH);
+      msg += "\nYour armor strength is currently: `w$ba_str$`y\n";
+   }
+
+   // Marketing colateral
+   p = AddCustom(p, "st_main", msg);
+
+   // Back button
+   p = AddButton(p, 1, "Back", 1);
+
+   // Don't bother with the buy button if there's no cash
+   curr_gt += 1;  // don't get bitten by the off-by-one bug!
+   if (curr_gt > i_body_armor_price) 
+   {
+      // Buy button
+      p = AddButton(p, 2, "Buy it", 2);
+   }
+
+   // What does the user want to do?
+   SendPacketAndWait(p);
+
+   // Outta here
+   if (i_my_result == 1)
+   {
+      return;
+   }
+
+   // Ch-ching! sale!
+   if (i_my_result == 2)
+   {
+       p = "";  // clear out old buttons
+
+       // Debit the account
+       ModTags(i_my_id, C_GOLD_TAG, -10);
+
+       // Add BA to inventory
+       SetCustomById(i_my_id, C_CUSTOM_BODY_ARMOR, 1);
+
+       // Set the strength
+       SetCustomById(i_my_id, C_CUSTOM_BODY_ARMOR_STRENGTH, i_initial_BA_strength);
+
+       // Make the armor take effect
+       ModMaxHP(i_my_id, 5);
+
+       // celebrate the sale
+       p = AddCustom(p, "st_url", "flash\\stuff\\money_bag_2.swf");
+       p = AddUpdateTags(p);  // force client to update the tag count
+       p = AddCustom(p, "st_main", "`yYour new `wBody Armor`y makes you feel all manly.");
+       p = AddButton(p, 1, "Continue", 1);
+
+       SendPacketAndWait(p); 
+   }
+ 
+   goto loop;
+}
+       </pre>
+       
+       </div>
+<div align="center"><b>Listing 3: store_supplies.c</b></div>
+
+       <p>This function displays the merchandise with a witty quip and 
+          indicates the current strength of the player's  armor, if any is 
+          owned.  If the player doesn't have enough gold to buy the armor, 
+	  the buy button isn't present.   If the user can and does buy the 
+          armor, any existing armor and armor bonuses must first be removed.
+          Notice that one can't prepend variables with a minus sign to get
+	  a negative value.  Instead, create a new variable set to zero and 
+	  substract the variable from that.  This yields the desired negative 
+	  value.  After this housekeeping, the armor is added to the inventory
+	  (in the C_CUSTOM_BODY_ARMOR slot), the armor's initial strength is 
+	  registered (in the C_CUSTOM_BODY_ARMOR_STRENGTH slot) and finally
+	  the player's maximum HP is raised appropriately.  A congratulatory 
+	  message is sent to the player to acknowledge the sale.
+       </p>
+
+       <p>Now that the armor can be displayed and bought, it's time to add 
+       armor to the list of supplies that can be bought.  This is done in 
+       Main() of <code>script/store_supplies.c</code>.  A new line of text 
+       (added to <code>st_main</code>) needs to be displayed and a button 
+       created that will take the player to the Armor screen (found in DisplayArmor()).
+       </p>
+
+       <div class="inset">
+       <pre>
+void Main()
+{
+  ...
+
+  // Add BA to the list of proffered items
+  st_items += "`w3`y - Body Armor - Cost: `w$i_body_armor_price$`y gold tags\n";
+  st_packet = AddCustom(st_packet, "st_main", st_items);
+
+  //add options
+  st_packet = AddButtonStore(st_packet, 1, "Back"); 
+  st_packet = AddButton(st_packet, 3, "Lockpick", 1);
+  st_packet = AddButton(st_packet, 4, "Armor", 3);
+
+  //send the packet
+  SendPacketAndWait(st_packet);
+
+  ...
+
+  if (i_my_result == 3) 
+  {
+     DisplayBodyArmor();
+  }
+}
+       </pre>
+       </div>
+       <div align="center"><b>Listing 4: store_supplies.c</b></div>
+
+       <p>The player now can buy the armor and enjoy the benefits of his 
+       purchase.  But what the scripter giveth, the scripter can taketh away.</p>
+  
+       <p>Every evening, the FQ server runs a maintenance cycle.  By adding 
+       code to maint_player.c (run for each player), it is possible to 
+       determine if this player has body armor and if so, decrement its 
+       strength (and the player's MaxHP) by 1 if the player engaged in combat 
+       that day.  Once the armor strength is reduced to 0, the armor 
+       disappears.</p>
+
+       <div class="inset">
+       <pre>
+void BodyArmorMaint()
+{
+      int ba_str = GetCustomByID(i_my_id, C_CUSTOM_BODY_ARMOR_STRENGTH);
+      int fights = GetPlayerFights(i_my_id);
+
+      // any fights will decrement the effectiveness of the armor
+      if (fights > 0) 
+      {
+        string msg;
+        ba_str -= 1;
+
+        // Did the armor get destroyed?
+        if (ba_str < 1)
+        {
+            // yes
+           SetCustomByID(i_my_id, C_CUSTOM_BODY_ARMOR_STRENGTH, 0);
+           SetCustomByID(i_my_id, C_CUSTOM_BODY_ARMOR, 0);
+            
+            // Tell the luckless owner
+           msg = "Your Body Armor is totaled.  Better it than you.";
+        }
+
+        // Depreciate armor and its effect
+        if (ba_str > 0)
+        {
+            SetCustomByID(i_my_id, C_CUSTOM_BODY_ARMOR_STRENGTH, ba_str);
+            ModMaxHP(i_my_id, -1);
+            msg = "Your Body Armor got pretty beat-on.\nArmor Strength: `w$ba_str$`y";
+        }
+
+        mailText(i_my_id, msg);
+      }
+}
+
+void Main()
+{
+   // Body Armor maint
+   int has_ba = GetCustomByID(i_my_id, C_CUSTOM_BODY_ARMOR);
+
+   if (has_ba == 1)
+   {
+      BodyArmorMaint();
+   }
+}
+       </pre>
+       </div>
+       <div align="center"><b>Listing 5: maint_player.c</b></div>
+
+       <p>It's true that a player who buys armor and never initiates 
+       combat will never lose his armor.  However players are rewarded for
+       marauding so the purely defensive armor owner is a bit of an edge case.
+       </p>
+ 
+       <!-- Already seen in body armor, but let's do some additional work
+       with the church.  Bingo: 
+         . Each card costs 1 wood tag
+         . Player can buy up to 6
+	 . There are 12 cards out there
+	 . Randomly select 1 of the 12
+	 . Jackpot is 12 wood tags
+	 . Maybe add a luck modifier? 
+       -->
+       <p><a name="places" class="smHeading"> Scripting Places </a> (<a href="#top">top</a>)</p>
+
+       <p>As flexible as Funeral Quest is, it's easier to modify the bahavior
+       of some places than others.  The church is the easiest place to modify 
+       because it is already stubbed out and serves no game purpose now.  It
+       is also possible to modify the flash client to enable new locations, 
+       like the graveyard, or create new locations entirely (like Dan Wilma's 
+       Casino mod).  The following example takes the path of least resistance 
+       and simply modifies the church to create Bingo night.
+       </p>
+
+       <p>Unlike Body Armor, Bingo Night only requires changes to 
+       <code>script/places/church.c</code>.  The first step is to add a button to 
+       the main script for Bingo Night.  This is straight forward, as the following
+       listing shows.</p>
+
+       <div class="inset">
+<pre>
+void Main()
+{
+ SetLocation("Church"); 
+ 
+ String st_packet;
+ msg  = "Father Smyth greets you warmly, a little too warmly.  ";
+ msg += "You wonder if he has anything on under that robe.";
+ st_packet = AddCustom(st_packet, "st_generic_info", msg);
+ st_packet = AddCustom(st_packet, "st_generic_status", "");
+
+ // new message
+ msg  = "`wFather Smyth: `y\"Why hello there, $st_my_name$.  ";
+ msg += "Isn't it a wonderfully fantastic day today?  Praise the Lord.\"";
+ st_packet = AddCustom(st_packet, "st_main", msg);
+  
+
+ st_packet = AddCustom(st_packet, "st_url_bg", "flash/background/background_church.swf");
+ st_packet = AddCustom(st_packet, "st_url",    "flash/people/churchguy_h.swf");
+ st_packet = AddCustom(st_packet, "st_object", "i_generic"); 
+
+ main_menu:
+   // Create the buttons
+   st_packet = AddButton(st_packet, 2, "Bingo Night", 2);
+   st_packet = AddButtonTownMap(st_packet, 1, "Leave"); 
+
+   //send the packet
+   SendPacketAndWait(st_packet); 
+   st_packet = ""; //clear it for a new packet 
+  
+   if (i_my_result == 2)  
+   {
+      DoBingoNight(); 
+   }
+
+ goto main_menu;
+}
+</pre>
+       </div>
+       <div align="center"><b>Listing 6: church.c</b></div>
+
+      <p>Locations need a little bit of setup on the client side.  Typically, 
+      a location name needs to be set so that folks in the Bar and the FQ admin
+      screen know where the player is.  For now, the location is set to 
+      "Church" with the SetLocation() call.  The text that appears in the
+      upper left hand corner of the flash client, next to the portrait, 
+      controlled by setting the <code>st_generic_info</code> variable.  All the client
+      variables can be modified with calls to AddCustom().  Text may appear
+      just below the <code>generic_info</code> message.  This is controlled by 
+      <code>st_general_status</code>.  Typically, these are used to display 
+      information that doesn't change as frequently as the buttons do.  For instance, 
+      room descriptions typically go here.  The main message section in the client is 
+      populated through setting <code>st_main</code>.  The portrait that appears in a 
+      location can be a composit of two flash files.  The background image is set with 
+      <code>st_url_bg</code> and the foreground image is set with <code>st_url</code>.
+      The flash client can work with jpeg and gif images too.  Finally, two buttons 
+      are added to the screen: one for Bingo Night and one to exit the current 
+      location entirely.  If the user selects the "Bingo Night" button, then 
+      DoBingoNight() is called.  The listing for that long function is shown 
+      below.
+      </p>
+
+      <div class="inset">
+<pre>
+void PlayBingo() 
+{
+   int wtags  = 0;
+   int cost   = 0;
+   int winner = 0;
+   int player = 0;
+
+   SetLocation("Bingo Night");
+
+   play_bingo:
+     p    = "";
+     msg  = "";
+     cost = 0;
+
+     msg = "2 cards = 1 in 6 chance of winning\n";
+     msg += "4 cards = 1 in 3 chance of winning\n";
+     msg += "6 cards = 1 in 2 chance of winning\n\n";
+     msg += "Jackpot is `w12 wood tags`y";
+
+     p = AddCustom(p, "st_generic_info", msg);
+     p = AddCustom(p, "st_generic_status", "");
+
+     p = AddCustom(p, "st_url_bg", "flash/background/background_church.swf");
+     p = AddCustom(p, "st_url",    "flash/stuff/lotteryticket.swf");
+     p = AddCustom(p, "st_object", "i_generic");
+  
+     wtags = GetTags(i_my_id, C_WOOD_TAG);
+
+     msg  = "\"Ladies and gentlemen, buy your cards now,\" says Father Smyth.\n\n";
+     msg += "Each card costs `w1 wood tag`y.\n";
+     msg += "You currently have `w$wtags$ wood tags`y.\n";
+     p = AddCustom(p, "st_main", msg);
+     p = AddButton(p, 1, "Back", 1);
+
+     // beware of off by one issues
+     if (wtags > 1)
+     {
+        p = AddButton(p, 2, "Buy 2",  2);
+     }
+   
+     if (wtags > 3)
+     {
+        p = AddButton(p, 3, "Buy 4", 3);
+     }
+
+     if (wtags > 5)
+     {
+        p = AddButton(p, 4, "Buy 6", 4); 
+     }
+
+     SendPacketAndWait(p);
+
+     if (i_my_result == 1)
+     {
+        // exit. Mail the results of tonight's winnings
+	if (total_winnings > 0)
+        {
+           msg  = "Look who got lucky at Bingo!  ";
+           msg += "Your total winnings are `y$total_winnings$ wood tags`w.";
+        }
+
+        if (total_winnings == 0)
+        {
+           msg  = "Bingo Night was a wash.  ";  
+           msg += "Good thing you didn't quit your day job.";
+        }
+
+        if (total_winnings < 0)
+        {
+           int tmp = 0;
+           int tmp -= total_winnings;
+
+           msg  = "The bingo cards just weren't talking to you tonight.  ";
+	   msg += "You lost `y$tmp$`w wood tags.";         
+        }
+
+        MailText(i_my_id, msg);
+        return;
+     }
+
+     // figure out the cost to the player
+     if (i_my_result == 2) 
+     {
+	player = 2;
+     }
+
+     if (i_my_result == 3)
+     {
+	player = 4;	
+     }
+
+     if (i_my_result == 4)
+     {
+	player = 6;
+     }
+
+     cost -= player;
+     ModTags(i_my_id, C_WOOD_TAG, cost);
+     total_winnings += cost;
+     winner = RandomRange(1, 12);
+
+     if (winner > player)
+     {
+        // select a losing message
+        winner = RandomRange(1,3);
+        if (winner == 1)
+        {
+           BingoLoser1();
+        }
+
+        if (winner == 2)
+        {
+           BingoLoser2();
+        }
+
+        if (winner == 3)
+        {
+           BingoLoser3();
+        }
+        goto play_bingo;
+     }
+
+     // Some of the player's cards won, did others?
+     winner = RandomRange(1,6);
+     if (winner > 2)
+     { 
+        // Player gets the whole jackpot
+	BingoTotalWinner();
+	goto play_bingo;
+     }
+
+     if (winner == 2)
+     {
+	// 2-way split
+        Bingo2SplitWinner();
+	goto play_bingo;
+     }
+
+     if (winner == 1)
+     {
+        Bingo3SplitWinner();
+        goto play_bingo;
+     }
+     
+   goto play_bingo;
+}
+</pre>      
+      </div>
+      <div align="center"><b>Listing 7: church.c</b></div>
+
+      <p>PlayBingo() is long, but not particularly complex.  After several 
+      variable housekeeping lines, Bingo Night declares itself to be a new location
+      with SetLocation().  This isn't required at all, but since players will
+      typically spend a few turns here, it seems reasonable to set the location
+      string.  The "generic" information is set to give the odds of 
+      Bingo to the players and the the initial location portrait is fixed.  
+      Existing graphics are recycled.   After figuring out the player's 
+      current number of tags, a sales pitch proffers bingo cards to the players. 
+      Like the Body Armor example, only options that the player can currently 
+      afford are rendered. </p>
+
+      <p>If the user decides to leave, their total winnings or 
+      losses are reported to them through  MailText().
+      Note that <code>total_winnings</code> isn't declared in the this function, 
+      but is declared in the yet unseen OnCreate() function (see Listing 8).   
+      </p>
+
+      <p>Naturally, the number of cards bought affects the amount of wood tags 
+      deducted from the player as well as the player's chances for winning.
+      The math logic is slightly twisted here because FQ-C doesn't know how to take
+      the inverse of an integer variable.  With the housekeeping done, bingo is 
+      ready to be played.</p>
+
+      <p>The details of Bingo are completely abstracted into a simple random
+      number choice.  Rather than accurately model Bingo, it seemed just as
+      effective to pick a number from 1 - 12, which represent the 12 cards in 
+      play.  In every round, some player wins (unlike real world bingo).  The 
+      players buys cards numbered 1, 2, etc up to 6.  If the number generated by
+      RandomRange() matches one of the cards the player holds, he wins.  
+      Otherwise, the player loses.   If the player loses, which will happen 
+      frequently, one of three messages is selected to display.  This hopefully
+      keeps the player interested in bingo.  If the player wins, there are 
+      three outcomes.  The player may win the whole jackpot because he holds
+      the sole winning card.  The player may have to split the pot with other
+      winning card holders.  Again, this is to make the bingo play more 
+      textured and interesting than the scratch ticket event (which, to be 
+      fair, can't be all that complex given the constraints of "unscripted" 
+      events).  Whatever the outcome, the player is invited to play again.
+      </p>
+
+      <p>The are a few file-visible variables needed for Bingo Night.  These 
+      all appear in OnCreate(), show below.
+      </p>
+
+      <div class="inset">
+<pre>
+void OnCreate()
+{
+   String p           = "";
+   String msg         = "";
+   int total_winnings = 0;
+}
+</pre>
+      </div>
+      <div align="center"><b>Listing 8: church.c</b></div>
+
+      <p>The next several functions are the lose/win messages.  The only 
+      complexity they present is that they all call BingoContinue() to paint 
+      the message and "Continue" button.  This relies on the file-visible 
+      string <code>p</code> and string <code>msg</code>.
+      </p> 
+ 
+      <div class="inset">
+<pre>
+// Call after the win/lose message
+void BingoContinue () 
+{
+   p = AddCustom(p, "st_url", "flash/stuff/lottery_lose.swf");
+   p = AddCustom(p, "st_main", msg);
+   p = AddButton(p, 1, "Continue", 1);
+
+   SendPacketAndWait(p);
+   return; 
+}
+
+// Because losing is so common, there a few loser messages
+void BingoLoser1()
+{
+   p = "";
+   msg  = "Ethel Peterson raises her withered hand and shouts \"`wBingo!`y\"\n";
+   msg += "\nRats!  You lose.";
+
+   BingoContinue();
+}
+
+void BingoLoser2()
+{
+   p = "";
+   msg  = "Frantically you shuffle through your cards, but to no avail. ";
+   msg += "None are winners.";
+   msg += "\nDag-dab-it!  You lose.";
+
+   BingoContinue();
+}
+
+void BingoLoser3()
+{
+   p = "";
+   msg  = "Mrs. Xing jumps up excitedly and exclaims \"`wBingo! Bingo!`y\"\n";
+   msg += "\nNo bingo for you!  You lose.";
+
+   BingoContinue();
+}
+
+void BingoTotalWinner()
+{
+   p = "";
+   msg  = "Seconds after Father Smyth calls \"`wB-9`y,\" ";
+   msg += "you triumphantly announce \"`wBingo!`y\"\n\n";
+   msg += "Payout: `w12 wood tags`y";
+
+   // Add winnings to player's total
+   ModTags(i_my_id, C_WOOD_TAG, 12);
+   total_winnings += 12;
+
+   BingoContinue();
+}
+
+void Bingo2SplitWinner()
+{
+   p = "";
+   msg  = "You smile confidently as Father Smyth calls \"`wN-2`y.\" ";
+   msg += "Before you can announce your winning card, ";
+   msg += "that old witch Ms. Hazel screeches \"`wBingo!`y\"\n";
+   msg += "\nYou split the pot with Ms. Hazel.\n";
+   msg += "Payout: `w6 wood tags`y";
+
+   // Add winnings to player's total
+   ModTags(i_my_id, C_WOOD_TAG, 6);
+   total_winnings += 6;
+
+   BingoContinue();
+}
+
+void Bingo3SplitWinner()
+{
+   p = "";
+   msg  = "Father Smyth calls \"`wG-4`y.\" ";
+   msg += "That firecracker Audry lights and shouts \"`wBingo!`y\" ";
+   msg += "A moment later, the spinstress Eileen holds aloft another ";
+   msg += "winning card.  To your surpise, you also have a winning card!\n";
+   msg += "\nYou split the pot with Audry and Eileen.\n";
+   msg += "Payout: `w4 wood tags`y";
+
+   // Add winnings to player's total
+   ModTags(i_my_id, C_WOOD_TAG, 4);
+   total_winnings += 4;
+
+   BingoContinue();
+}
+</pre>
+      </div>
+      <div align="center"><b>Listing 9: church.c</b></div>
+
+      <p>When appropriate, winnings are added to the player's current wood tag 
+      total and <code>total_winnings</code> is updated.  It's important to 
+      realize that the odds are stacked against the player.  Excepting 
+      statistical abbhorations, players spending a lot of time at Bingo Night 
+      will only make Church rich.</p>
+            
+       <!-- Mafia shakedown:
+         . Event: a thug comes to the door to get 1-2 gold tags
+	 . The gold is stored in a global var
+	 . Every odd day during maint, the gold is "mistakenly" given to 
+	     one player
+	 . A broadcast message fingering the "hapless wit" goes out to anger 
+	   the other players
+       -->
+       <!-- talk about events.txt, risks.txt -->
+       <p><a name="events" class="smHeading"> Scripting Events </a> (<a href="#top">top</a>)</p>
+ 
+       <p>Before FQ-C was added to Funeral Quest, the game could be locally 
+       modified using flat text files.  Table 11 lists the filenames and a 
+       brief description of their purpose.  All the listed files can be found 
+       in the Funeral Quest directory.
+       </p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+          <th>Name</th>
+	  <th>Description</th>
+       </tr>
+
+       <tr><td valign="top">events.txt</td><td align="top">Defines all the "unscripted" random events that a player can encounter.</td></tr>
+       <tr><td valign="top">hard_sell.txt</td><td align="top">Defines all the high-priced items players can attempt to sell.</td></tr>
+       <tr><td valign="top">karma.txt</td><td align="top">The list of epithets associated with each level of karma.</td></tr>
+       <tr><td valign="top">news_blurbs.txt</td><td align="top">The daily news items that often have global implications.</td></tr>
+       <tr><td valign="top">no_customers.txt</td><td align="top">Text that appears when no customers are present.</td></tr>
+       <tr><td valign="top">ratings.txt</td><td align="top">Labels for player ratings.</td></tr>
+       <tr><td valign="top">risks.txt</td><td align="top">Defines all the random risks that players may take for a BP bonus.</td></tr>
+       <tr><td valign="top">soft_sell.txt</td><td align="top">All the low-ticket items players can use to achieve perfect sales.</td></tr>
+       <tr><td valign="top">swear_words.txt</td><td align="top">Maps undesirable language to euphemisms.</td></tr>
+       <tr><td valign="top">yangs.txt</td><td align="top">Text that appears when Yang's Cursed Tigers are delivered.</td></tr>
+       <tr><td valign="top">yangs_nice.txt</td><td align="top">Text that appears when Yang's Lucky Sparrows are delivered.</td></tr>
+       </table>
+       <div align="center"><b>Table 11: Configuration files</b></div>
+       </div>
+
+       <p>Most of the file formats are fairly straight forward and are left as 
+       an excercise for the reader.  However, the workings of some of these 
+       files a less obvious and merit some brief discussion.  Experimentation 
+       will yield the fastest learning results.  In all files, double slashes 
+       (//) start comments.  All text to the right of them is ignored.  Blank 
+       lines are generally ignored.  Every statement must appear on one line, 
+       although some lines below are line-broken for display reasons.  When lines
+       are broken, a backslash appears as the last character on the line and
+       the following line is indented with a arrow.  Statements that require 
+       arguments use a pipe ( <code>|</code> ) to separate the action and each 
+       argument.</p>
+
+       <p>The <code>events.txt</code> represent random, one-time isolated 
+       encounters that players sometimes experience.  A typical entry looks 
+       like the following:
+       </p>
+
+       <div class="inset">
+       <pre>
+start_entry
+message|An old mortuary science professor bequeaths you his \
+ &rarr; favorite skeleton, "Morty".
+mod_bp|4|8
+mod_luck|1|3
+set_pic|flash/stuff/battle_lose.swf
+       </pre>
+       </div>
+       <div align="center"><b>Listing 10: sample events.txt</b></div>
+
+       <p>Every event entry must begin with a <code>start_entry</code> statement. 
+       There is no corresponding <code>end_entry</code>.  The next statement 
+       identifies the text that appears on the player's screen.  Flash client 
+       escape sequences my appear here.  Next, any bonuses/penalties appear. 
+       There are only two awards: mod_bp (adjust burial points) and mod_luck
+       (adjust player's luck attribute).  Either one of these may be omitted. 
+       Finally, the foreground picture be set with a set_pic action.  Recall that 
+       the paths are relative to the FQ server root.  You will need to reload the 
+       files from the FQ admin screen for changes to take effect.  
+       </p>
+
+       <p>Every game day, a new news item is displayed.  News items can provide
+       a one-time award to just one player or to all the players.  Below is a 
+       typical entry:</p>
+
+       <div class="inset">
+<pre>
+start_entry
+title|SNAKEHEAD FISH MENACE STRIKES DEATHSVILLE
+message|"At long last, our quiet community has been distrupted \
+ &rarr; by these air-breathing, sword-wielding ninja fish. \
+ &rarr; God help us all," said the mayor at a recent press conference.
+give_random|`wThe phone rings - It's the Hospital.\n\n`$"More fish \
+ &rarr; fatalities for you, *NAME*."
+mod_bp|20|40
+mod_luck|1|2
+add_log|`7*HOME*'S SUCCESS LINKED TO SNAKEHEAD FISH\n`^*NAME* says \
+ &rarr; "God bless those carniverous Asian fish."
+</pre>
+       </div>
+       <div align="center"><b>Listing 11: sample news_blurbs.txt</b></div>
+
+       <p>Just like entries in <code>events.txt</code>, each entry begins with 
+       start_entry.  The title appears in a different font than the message. 
+       Use the give_random action to isolate the benefits/penalties to a random
+       player who will also get whatever message is provided.  Additionally, 
+       messages can be sent to the server log.
+       </p>
+
+       <p>There are two sequences that have special meanings in new items.  When
+       "*NAME*" appears, it is replace with the player's name choosen by give_random.
+       "*HOME*" is replaced by the randomed selected player's parlor name.</p> 
+
+       <p>Risks are those random events that allow players to pit their luck 
+       attribute against Dame Fortune for some globally defined amount (the 
+       factory default is 50 BP).  Risks also have the most complex file 
+       structure.</p>
+
+       <div class="inset">
+<pre>
+start_message|`$You happen upon an `5ancient scroll `$in the suit \
+ &rarr; pocket of your most recent client. Its black words instruct 
+ &rarr; you on how to raise the dead.
+start_url|flash/stuff/question.swf
+start_url_bg|flash/background/background_1.swf
+
+normal|Burn scroll
+risk|Cast spell
+
+success_message|`$After completing an incantation better suited \
+ &rarr; for inhuman tongues, the ground trembles and cracks! \
+ &rarr; `4The dead walk again!\n\n`$Coolio! 
+success_url|flash/stuff/battle_lose.swf
+success_url_bg|flash/background/background_1.swf
+
+fail_message|`4You raised something all right!
+fail_url|flash/animals/dog-dragging-hand.swf
+fail_url_bg|
+
+normal_message|`$As the scroll disappears into thick, viscous \
+ &rarr; smoke, you feel pride in your victory over the forces 
+ &rarr; of darkness.\n\nThen you realize that there are more \
+ &rarr; scrolls out there... 
+normal_url|flash/people/jesus_happy.swf
+//normal_url_bg|flash/background/background_1.swf
+
+add_risk|
+
+</pre>
+       </div>
+       <div align="center"><b>Listing 12: sample risks.txt</b></div>
+
+       <p>The key to crafting an entertaining risk is to embelish the text -- 
+       there isn't much game play in a random roll of the die.  Risks comprise
+       four sections: an intro, a success message, a failure message, and
+       a decline message.  Unlike the other files discussed, there is no 
+       initial directive that begins a risk.  The start_message lays out the 
+       challenge to the player.  Normally, two buttons are presented to the 
+       player.  The <code>normal</code> action, which takes a button label 
+       argument, declines the risk.  The <code>risk</code> action, which also 
+       takes a button label, accepts the risk.  Note that spaces after the pipe
+       will appear in the flash client.  The initial portrait that accompanies 
+       the risk is specified with <code>start_url</code> and 
+       <code>start_url_bg</code>.  If the risk is accepted and the player 
+       succeeds, the success_* actions occur.  A new message and portrait 
+       can (and should) accompany a successful risk.  On the other hand, risks
+       that fail also have attendent text and graphics specified by the fail_*
+       directives.  If the risk is declined, yet another set of messages and 
+       graphics are displayed using the normal_* actions.  Do not forget to  
+       finish the risk block with <code>add_risk</code>.  Not properly 
+       finishing a risk block, a very common bug, causes weird server problems.
+       </p>
+
+       <p>With the advent of FQ-C, events can be made much more interactive 
+       through scripting.  As an example, the arson event present the player 
+       with the opportunity to burn a competitor's palor to the ground.  
+       Another interesting use of the scripted events can be used in 
+       conjunction with player maintenance to create Extortion Racket event.
+       </p>
+
+       <p>In the Extortion Racket event, players are given the "opportunity"
+       to contribute "the olive oil importer's fund for occupation hazzards."
+       A small random amount of tags will be "donated" by the player.  So far, 
+       this event could be handled with the flat files.  However, the tags 
+       taken from the players are stored in global variables and every odd 
+       game day during maintance, a random player finds an unexpected parcel
+       of tags on his front stoop.  What's interesting about this event is 
+       that players will find their money directly put into another player's
+       hands.  Of course if it were broadcast on the news that the recipient
+       found a big bag of other player's money, it might tend to give game 
+       play a certain edge.</p>  
+
+       <p>Event scripts should be placed in the <code>scripts/events</code> directory. 
+       The script, <code>extortion_racket.c</code>, produces the "mysterious stranger" 
+       consists only one function, <code>Main()</code>, as seen in Listing 13.</p>
+
+       <div class="inset">
+<pre>
+void OnCreate()
+{
+}
+
+void Main()
+{
+ LogMsg("Running Extortion event for $st_my_name$.");
+
+ String p;
+ String msg;
+
+ int wtags = GetTags(i_my_id, C_WOOD_TAG);
+ int stags = GetTags(i_my_id, C_SILVER_TAG);
+ int gtags = GetTags(i_my_id, C_GOLD_TAG);
+
+ int scalar = 1;
+
+ msg = "`yA burly gentleman from the local olive oil importers guild ";
+ msg += "enters your parlor.\n\n";
+ msg += "\"`wI'm collectin' for the Occupational Hazzards fund.  ";
+ msg += "Contribute or regret it,`y\" he says omniously.";
+ p = AddCustom(p, "st_main", msg);
+ p = AddCustom(p, "st_url_bg", "flash/background/background_5.swf");
+ p = AddCustom(p, "st_url", "flash/people/m_adult_4.swf");
+
+ loop:
+   p = AddButton(p, 2, "Donate", 1); 
+   p = AddButton(p, 1, "Refuse", 2); 
+
+   SendPacketAndWait(p); 
+ 
+   if (i_my_result == 1)
+   {
+      // take fewer tags
+      scalar = 3; 
+   } 
+
+   if (i_my_result == 2)
+   {
+      // take all the players cash
+      scalar = 1;
+   }
+
+   LogMsg("scalar is $scalar$");
+   if (scalar < 1) 
+   {
+      LogMsg("scalar is broken");
+      goto loop;
+   } 
+
+   // take the right amount of tags
+   int _tmp = 0;
+   String damage = "";
+   if (gtags > 0)
+   {
+	gtags /= scalar;
+
+        if (gtags > 0)
+        {
+	   damage += "`w$gtags$`y gold tags";
+        }
+
+	_tmp -= gtags;
+	ModTags(i_my_id, C_GOLD_TAG, _tmp);
+   }
+
+   _tmp = 0;
+   if (stags > 0)
+   {
+        stags /= scalar;
+ 
+        if (stags > 0)
+        {
+           damage += " `w$stags$`y silver tags";           
+        }
+
+        _tmp  -= stags;
+        ModTags(i_my_id, C_SILVER_TAG, _tmp);
+   }
+
+   _tmp = 0;
+   if (wtags > 0)
+   {
+        wtags /= scalar;
+        if (wtags > 0)
+        {
+           damage += " `w$wtags$`y wood tags";
+        } 
+        _tmp  -= stags;
+        ModTags(i_my_id, C_WOOD_TAG, _tmp);
+   }
+
+   // Add tags to the global "Free Parking"
+   G_EXTORTION_WTAGS += wtags;
+   G_EXTORTION_STAGS += stags;
+   G_EXTORTION_GTAGS += gtags;
+
+   msg  = "`7PARLOR VISITED BY ROGUE OLIVE OIL IMPORTERS\n`^";
+   msg += "A group of lawless olive oil importers are aggressively ";
+   msg += "collecting donations for their \"occupational hazzards\" fund.  ";
+   msg += "When questioned, local mortician $st_my_name$ said, ";
+   msg += "\"The man was big and burly and ...\".  ";
+   msg += "$st_my_name$ then broken down into tears.  ";
+   msg += "To date, no one knows where all the money they collect goes.\n\n";
+
+   AddToNews(msg);
+   msg  = "mafia coffers swell: $G_EXTORTION_WTAGS$ wt, ";
+   msg += "$G_EXTORTION_STAGS$ st, $G_EXTORTION_GTAGS$ gt";
+	
+   LogMsg(msg);
+
+   p = "";
+   p = AddCustom(p, "st_main", "`yOuch!  You \"donated\" $damage$.");
+   p = AddButtonHome(p, 1, "Continue"); 
+
+   SendPacketAndWait(p);
+   return;
+}
+
+void OnKill()
+{
+}
+</pre>
+       </div>
+       <div align="center"><b>Listing 13: extortion_racket.c</b></div>
+
+       <p>By now, most of the script should be transparent.  First, the portrait and 
+       initial message is defined.  The player is offered the choice of donating or
+       refusing to cooperate with the thug.  In either case, the player is going to 
+       lose tags.  It's only a question of degree.  If the player freely donates tags,
+       the thug takes a third of <i>each</i> type of tag.  If the player refuses, 
+       <b>all</b> tags are taken.  This is a truly painful event.
+       </p>
+
+       <p>The player's tags are removed and stored in global variables declared in 
+       <code>script/init.c</code> (see Listing 14).  
+       </p>
+
+       <div class="inset">
+<pre>
+void Main()
+{
+  /// code snipped ... 
+
+  // Extortion Racket globals
+  global int G_EXTORTION_WTAGS = 0;
+  global int G_EXTORTION_STAGS = 0;
+  global int G_EXTORTION_GTAGS = 0;
+
+  LogMsg("Scripting system initted, ran init.c.");
+}
+</pre>
+       </div>
+       <div align="center"><b>Listing 14: init.c</b></div>
+
+       <p>It's a good idea to begin global variables with 'G_'.  Carefully selecting
+       variable names helps other people read unfamiliar code.  Note that these globals
+       only exist in RAM.  If the game crashes or is shutdown, then these variables 
+       disappear.  The last step in the extortion racket is to select a player to 
+       to be the recipient of the "fund".   This happens during game maintenance.
+       </p>
+
+       <div class="inset">
+<pre>
+// Pick a player to give the extortion to
+void DoExtortion()
+{
+   int _tmp = RandomRange(1,3);
+   if (_tmp < 3)
+   {
+      return;
+   }
+   
+   // pick a player;
+   int _player = GetRandomPlayerID(-1);
+   
+   string _msg = "`7MORTICIAN FINDS LOOT`^\n";
+   _msg += GetNameFromID(_player);
+   _msg += " awoke this morning to find ";
+
+   // And if there's a "fund"
+   int found = 0;
+   if (G_EXTORTION_GTAGS > 0)
+   {
+      ModTags(_player, C_GOLD_TAG, G_EXTORTION_GTAGS);
+      _msg += StringExpand("$G_EXTORTION_GTAGS$ gold tags, ");
+      G_EXTORTION_GTAGS = 0;
+      found = 1;
+   }
+
+   if (G_EXTORTION_STAGS > 0)
+   {
+      ModTags(_player, C_SILVER_TAG, G_EXTORTION_STAGS);
+      _msg += StringExpand("$G_EXTORTION_STAGS$ silver tags, ");
+      G_EXTORTION_STAGS = 0;
+      found = 1;
+   }
+
+   if (G_EXTORTION_WTAGS > 0)
+   {
+      ModTags(_player, C_WOOD_TAG, G_EXTORTION_WTAGS);
+      _msg += StringExpand("$G_EXTORTION_WTAGS$ wood tags, ");
+      G_EXTORTION_WTAGS = 0;
+      found = 1;
+   }
+
+   if (found == 0)
+   {
+      _msg += "an empty money sack";   
+   }
+
+   _msg += " and a whole lot of confusion on his front ";
+   _msg += "porch this morning.\n\n";
+
+   AddToNews(_msg);
+
+   return;
+}
+
+void Main()
+{
+  LogMsg("Script maint.c processed.");
+  DoExtortion();
+}
+</pre>
+       </div>
+       <div align="center"><b>Listing 15: maint.c</b></div>
+
+       <p>During daily maintenace, DoExtortion() is called.  However, the 
+       "Free Parking" loot is only distributed 33% of the time.  This will let
+       the pot grow and make the harassed players particularly ensanguine with rage.
+       To pick a random player, supply GetRandomPlayer() with an argument of -1. 
+       To insure that everyone knows who got the money, a news item message is 
+       constructed.  Each global variable is checked to see if it has a non-zero 
+       amount and if it does, that amount is transfered to the selected player.  
+       The news item message includes the exact amount of tags found.  The 
+       StringExpand() function is needed here because each global variable must be 
+       interpolated in the string before it is zeroed out.  Otherwise when the news
+       item is send with AddToNews(), the variables will be zero when interpolated. 
+       If the "Free Parking" is empty, a stub message is created.  
+       </p>
+
+       <p>Finally, it's time to add the extortion_racket to list of scripted events.
+       All scripted events must be included in <code>script_event.c</code> file.
+       </p>
+
+       <div class="inset">
+<pre>
+void Main()
+{
+ //pick a random script event
+
+ int i_random = RandomRange(1,3); 
+
+ if (i_random == 1)
+  {
+    LogMsg("Running arson event");
+    RunScriptNoReturn("script\\events\\arson.c"); 
+  }
+
+ if (i_random == 2)
+ {
+    LogMsg("Running bonus_tag event");
+    RunScriptNoReturn("script\\events\\bonus_tag.c"); 
+ }
+
+ if (i_random == 3)
+ {
+    RunScriptNoReturn("script/events/extortion_racket.c");
+ }
+
+}
+</pre>
+       </div>
+       <div align="center"><b>Listing: 16: script_event.c</b></div>
+
+       <p>There is no reason that every event needs to be equally likely.</p>
+
+       <!-- already seen player, what about global?  Mortician of the week award? 
+       -->
+       <p><a name="maint_hooks" class="smHeading"> Maintenance Hooks </a> (<a href="#top">top</a>)</p>
+       
+       <p>Every night at midnight server localtime, the Funeral Quest server runs 
+       a maintenance cycle.  All kinds of game house keeping is done during this time.
+       With FQ-C, it is 
+       now possible to define new maintenace tasks on a per player 
+       (with <code>script/maint_player.c</code>)or global (with <code>script/maint.c</code>) 
+       basis.  Read through the Body Armor code for an example of per player 
+       maintenance code.  Take a look at the Extortion Racket event for a 
+       global maintenance example.</p>
+ 
+       <p><a name="flash_client" class="smHeading"> Notes about the Flash client </a> (<a href="#top">top</a>)</p>
+       <p><i>Coming soon.</i></p>
+
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th>Escape Sequence</th><th>Description</th>
+       </tr>
+       <tr><td valign="top">`0</td><td valign="top">light green text</td></tr>
+       <tr><td valign="top">`1</td><td valign="top">dark blue text</td></tr>
+       <tr><td valign="top">`2</td><td valign="top">dark green text</td></tr>
+       <tr><td valign="top">`3</td><td valign="top">cyan text</td></tr>
+       <tr><td valign="top">`4</td><td valign="top">red text</td></tr>
+       <tr><td valign="top">`5</td><td valign="top">purple text</td></tr>
+       <tr><td valign="top">`6</td><td valign="top">brown text</td></tr>
+       <tr><td valign="top">`7</td><td valign="top">light gray text</td></tr>
+       <tr><td valign="top">`8</td><td valign="top">dark gray text</td></tr>
+       <tr><td valign="top">`9</td><td valign="top">light blue text</td></tr>
+       <tr><td valign="top">`w</td><td valign="top">white text</td></tr>
+       <tr><td valign="top">`y</td><td valign="top">yellow</td></tr>
+       </table>
+
+       <div style="font-weight: bold">Table 12: Flash Client escape sequences</div> 
+       </div>
+
+<!--
+       <div align="center">
+       <table border=1 cellpadding=2 cellspacing=0>
+       <tr class="smHeading">
+         <th>Name</th><th>Description</th>
+       </tr>
+       <tr><td valign="top"><code>st_url</code></td><td valign="top">foreground portrait URL</td></tr>
+       <tr><td valign="top"><code>st_url_bg</code></td><td valign="top">background portrait URL</td></tr>
+       <tr><td valign="top"><code>st_main</code></td><td valign="top">Text that appears in the lower middle of screen.  This is the domain text area in the client.</td></tr>
+       <tr><td valign="top"><code>st_generic_info</code></td><td valign="top">Text that appears left of the portrait.</td></tr>
+       <tr><td valign="top"><code>st_generic_status</code></td><td valign="top">Text that appears left of the portait, under any <code>st_generic_info</code> text.</td></tr>
+       <tr><td valign="top"><code>st_my_name</code></td><td valign="top">In scripted events, holds the name of the player.</td></tr>
+       <tr><td valign="top"><code>st_object</code></td><td valign="top">unknown</td></tr>
+       <tr><td valign="top"><code>st_view</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_mood</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_class</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_issue</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_date</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_force</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_option_a</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_option_0</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_option_1</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_option_2</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_option_3</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_server_news</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_note</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_force_object</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_callback</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_debug</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_force_bg</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_error</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       <tr><td valign="top"><code>st_</code></td><td valign="top">desc</td></tr>
+       </table>
+
+       <div style="font-weight: bold">Table 13: Flash Client variables</div> 
+       </div>
+-->
+
+       </td>
+     </tr>
+   </table>
+   </td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

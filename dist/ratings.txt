@@ -1,0 +1,98 @@
+1|You are running the crappiest parlor in the city!
+2|You've had several arson attempts.
+3|You've been petitioned to be shut down.
+4|Your home has literally been pissed on.
+5|You and your home are despised.
+6|You are pretty much hated by the town.
+7|You are now being picketted by locals.
+8|You are now being boycotted by locals.
+9|You are really unpopular.
+10|Your home is unpopular.
+11|You run a hole in the wall.
+12|Not used much.
+13|Not well liked.
+14|Unheard of.
+15|Ignored.
+16|"What's this place?"
+17|Neighbors hate you.
+18|Locals have asked you to clean up the place.
+19|Trailer park people use you.
+20|You're known as a discount parlor.
+21|Crappy and Humble.
+22|Things will get better?
+23|Robbed regularly.
+24|Graffiti'd often.
+25|Bad Ghosts haunt the place.
+26|Black Cats always nearby.
+27|A bit of a spider web problem.
+28|Smells odd.
+29|Most bodies here are legitimately dead.
+30|Not too many maggots get into the bodies here.
+31|Even dead people won't use the bathroom here.
+32|Some middle class people are buried here.
+33|Buffet food is poor and word is getting out.
+34|Recieving pizza for 'i.c. weiner' and 'i.p. freely'.
+35|Peoples sometimes confuse the place with an Adult Store.
+36|Muggings in the area.
+37|Graffiti is a problem.
+38|Smell in the back alley is noticable.
+39|The preppy kids bury friends here.
+40|Fairly popular for white trash funerals.
+41|Need mafia help.
+42|Phone soliciters calling often.
+43|Undead attacks common.
+44|Need airfreshers badly.
+45|Rumors of hauntings a problem.
+46|You get dirty looks at grocery stores.
+47|People are not sure about your parlor.
+48|Able to offer free coffee and tea to customers.
+49|Grounds nicely mowed.
+50|Coupons are helping business. You finally made the top 50 percent.
+51|You're officially a 'so-so' parlor.
+52|Cadillacs parked out front.
+53|People are dead -before- they come in.
+54|Family Jewelery no longer 'misplaced' much.
+55|A cleaning lady comes by regularly.
+56|Your casket showroom is being remodeled.
+57|Your parlor has a somewhat decent reputation now.
+58|People seem to like the building paintjob.
+59|Your parlor is in the top 40 percent.
+60|Most people consider your parlor a nice place.
+61|Buffet Days go well.
+62|Real Medical license aquired.
+63|Regular mailings to retirement homes.
+64|Pre-need sales doing ok.
+65|You have gotten some decent press lately.
+66|Mr Yang even remembers your name.
+70|Golf Course people buried here.
+71|People think of your joint as one of the better ones around.
+72|Nice Ghosts haunt the place.
+73|The community accepts you.
+74|Most ugly rumors have been squelched, doing very well.
+75|Local churches recommend you.
+76|The purchase of white doves to fly around has helped.
+77|As far as parlors in the area you're considered well above average.
+78|You wear a rolex.
+79|Mob members are buried here.
+80|Your caskets are made of solid oak.
+81|You are praised by men of the cloth.
+82|Donates to charity.
+83|Shook hands with the president.
+84|Aquired a date with June.
+85|You listen to Milli Vanilli
+86|Your parlor is in the top 20 percent.
+87|Even your relatives use you now!
+88|Your parlor is in the top 20 percent.
+89|Your parlor is in the top 20 percent.
+90|Your parlor is in the top 20 percent.
+91|Daisys grow where the dead lay.
+92|2Pac is buried here.
+93|Elvis is buried here.
+94|Your internet webpage is making lots of sales.
+95|Choosey customers choose you.
+96|You are able to charge the big money these days.
+97|T-Shirts with your logo sold at giftshop.
+98|You run a first class establishment.
+99|Your parlor is tops..almost the best in town.
+100|Your parlor is known as the absolute best in town.
+

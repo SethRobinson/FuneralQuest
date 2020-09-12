@@ -1,0 +1,124 @@
+//This file holds the random strings that we show when no customers appear.
+//range is the age of the game in game days, so you could actually follow a story kind of, but setting ranges for events
+//*************************************************************
+range|-229999999|299999999
+
+start_entry
+title|DEATH WITH DIGNITY
+message|20 percent off Gold Coffins at Di-Mart! For a comfortable eternal lay, come see us today!
+
+start_entry
+title|NEW SPEED LIMIT SPEEDS DEATH
+message|Maybe 55 in a residential is bad. "We should've known people can't dodge cars," admits the Department of Transportion.
+give_random|`wThe phone rings - It's the DMV.\n\n`$"We heard you give bulk discounts..."
+mod_bp|20|50
+mod_luck|1|5
+add_log|`7DEATH CARE PROVIDER CHOSEN\n`^The Department of Transportation has issued a statement declaring *HOME* the official location for today's services. *NAME* will be on hand for counseling.
+
+start_entry
+title|MIXED UP VIAGRA MEDICATION IN RETIREMENT HOME
+message|"It's like a stabbing ... but different," comments the coroner's office.
+give_random|`wThe phone rings - It's Golden Oaks Retirement Home.\n\n`$"We've got some bodies for you..."
+mod_bp|40|90
+mod_luck|1|5
+add_log|`7FUNERAL HOME CHOSEN\n`^Golden Oaks Retirement Home has announced that *NAME* from *HOME* will be hosting services for the recently departed.
+
+start_entry
+title|A BURGER TO DIE FOR
+message|Ecoli outbreak hits Bill's Big Burger leaving many dead or just puking a lot.
+give_random|`wThe president of Bill's Big Burger walks in.\n\n`$"Let's make a deal..."
+mod_bp|40|90
+mod_luck|1|5
+add_log|`7BURGER CONTRACT SIGNED\n`^*NAME* from *HOME* has been signed exclusive rights to the Bill's Big Burger  related deaths.  There will be a buffet.
+
+start_entry
+title|ENTIRE SOCCER TEAM KICKS COLLECTIVE BUCKET
+message|Plane crash kills 15 people.  Some funeral parlor is going to be in for some big business.
+give_random|`wA soccer coach brings in 15 dead people - and he wants them all embalmed!
+mod_bp|80|150
+mod_luck|1|10
+add_log|`7LOCAL PARLOR SCORES\n`^*NAME* from *HOME* will host the funeral and memorial service of the brave 15 soccer players who ended life so tragicially. 
+
+start_entry
+title|ZOO ANIMALS ESCAPE, SEEK REVENGE ON HUMANS AND COTTON CANDY
+message|"Now their rage is out of the cage," says local australian zookeeper.
+give_random|`wThe chairman of your local zoo walks in with a black garbage bag.\n\n`$"Please bury this.  ASAP."
+mod_bp|30|55
+mod_luck|1|5
+add_log|`7AUSTRALIAN ZOOKEEPER MAULED\n`^*NAME* from *HOME* will be hosting services today.
+
+start_entry
+title|THE BIG ONE HITS
+message|An earthquake measuring 8.6 on the Richter scale shook things up today.  Families have banded together to locate a death care facility that will offer a package deal.
+give_random|`wA large truck parks out front and a group of people come inside.\n\n`$"What we really want is one really large grave..."
+mod_bp|80|125
+mod_luck|1|5
+add_log|`7EARTHQUAKE TRAGEDY HAS BRIGHT SIDE\n`^*NAME* from *HOME* has allowed the victims to purchase one rather large grave together for a discounted per person price.
+
+start_entry
+title|COMPETITION IS FIERCE IN FUNERAL INDUSTRY
+message|"There just aren't enough bodies to go around.  Some of these places will die off," admits Mayor.
+
+start_entry
+title|MANY DEAD AFTER PLAYING THEIR ONLINE GAMES TOO LONG
+message|"All they wanted was another level, what they got was death," comments Police Commissioner.
+
+start_entry
+title|LOCAL PIZZA COMPANY SCREWS UP BIGTIME
+message|"If they didn't eat the pizza in under 30 minutes they would die.  Bad cheese indeed," reports some dude.
+
+start_entry
+title|MAN KILLED BY NEW LASER PRINTER
+message|"He thought it was a xerox machine and was trying to photocopy his ass," explains his manager.
+
+// jjohn@taskboy.com
+// Use these FQ Modifications and prosper
+start_entry
+title|SNAKEHEAD FISH MENACE STRIKES DEATHSVILLE
+message|"At long last, our quiet community has been distrupted by these air-breathing, sword-wielding ninja fish. God help us all," said the mayor at a recent press conference.
+give_random|`wThe phone rings - It's the Hospital.\n\n`$"More fish fatalities for you, *NAME*."
+mod_bp|20|40
+mod_luck|1|2
+add_log|`7*HOME*'S SUCCESS LINKED TO SNAKEHEAD FISH\n`^*NAME* says "God bless those carniverous Asian fish."
+
+start_entry
+title|AREA YOUTH AVOID SUN, FRESH AIR
+message|Many of Deathsville's young aren't playing baseball or street hockey these days. Instead, they rush home from school on to their computers to get their daily fix of FUNERAL QUEST. When will the madness end?
+
+start_entry
+title|LEGISLATOR PASSES TAX BREAK FOR MORTICIANS
+message|Deathsville's funeral parlors are filled with glee today at the news of the tax break. Said one owner, "They said I was a freak for becoming a mortician. Who's laughing now?"
+
+start_entry
+title|DEAD MAN'S LAST WORDS: "I CAN'T BELIEVE IT WASN'T BUTTER"
+message|A mixup at the diary processing plant led to a lethal dose of cleaning fluids entering the butter production unit. Plant Manager George Toole offered his apologies to Deathsville's many affected families. "Come down to the factory and we'll give you new butter."
+
+start_entry
+title|GREEN METEOR SHOWER BRINGS RECORD CROWDS
+message|Last night's highly distinctive eerie green meteor shower dazzled area spectators last night. "It was the prettiest thing I ever done seen," said Emma Lou Harrison who awoke this morning totally blind. 
+
+start_entry
+title|FREAKY KID SEES "DEAD PEOPLE"
+message|Area nerd claims to see "dead people" all around him during his daily routines. "Of course he does, " said his mother. "We run a funeral parlor."
+
+start_entry
+title|AREA POETS, SENSITIVES LANGUOR IN DELIRIUM
+message|Medical experts are dumbfounded at the record number of area residents who have taken ill this Hallowmas. Most of those afflicted are artists of some sort. One man, a young poet, has sculped a blasphemous, basalt figurine with a tentacled head and a bloated, rugose body backed with bat-like wings. When questioned, Father Smyth said "this can't be good."
+
+// jjohn 10/29/2002
+start_entry
+title|THEATRE FIRE KILLS DOZENS
+message|The popular theatrical adaptation of the movie "BackDraft" came to deadly conclusion last night in neighboring town Blaine when the special effects got out of control.
+
+//some scooby-doo thing: haunted carnival, wolfman, etc.
+start_entry
+title|AREA TEENAGERS UNMASK "ZOMBIE SCARECROW"
+message|Before a disbelieving sheriff, four area youths removed the mask of the so-called "Zombie Scarecrow," who turned out to be none other than Old Man Withers. According to one of the young sleuths, Withers "like wanted to frighten the farmers away from the corn field so he could make off with the buried treasure."  
+
+//Evil dead
+start_entry
+title|SOME OF AREA DEAD EVIL, MENACING
+message|A local professor's cabin, located in a remote wooded area, was the scene of hair-whitening terror last night as the recording of demon-resurrection passages were unwittingly played aloud by a curious area youth. It was later learned that the professor and his wife had been overcome already by the resuscitated evil when the recordings were  first made. Emergency personnel were unable to reach the cabin, due to a bizzare bridge accident.    
+give_random|`wYour answering machine has the message:\n\n`$Bring the SUV hearse up to the haunted cabin. We got bodies.
+mod_bp|50|80
+add_log|*HOME* discreetly removes the bodies from the haunted cabin, woodshed.

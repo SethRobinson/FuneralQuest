@@ -1,0 +1,77 @@
+09-12 8:51 AM:Running maint.
+09-12 8:51 AM:Resetting game...
+09-12 8:51 AM:Deleting game data files...
+09-12 8:51 AM:Deleting mail and messages...
+09-12 8:51 AM:Deleting logs...
+09-12 8:51 AM:Script reset.c processed.
+09-12 8:51 AM:FuneralQuest Server 1.0 Initializing...
+09-12 8:51 AM:Changing directory to D:\projects\FuneralQuest\source\..\dist\.
+09-12 8:51 AM:Loading system settings. (1.0 version)
+09-12 8:51 AM:Loading game config. (1.0 version)
+09-12 8:51 AM:HTTP Server Started: Gust [] on port 80
+09-12 8:51 AM:Browser address to reach server: http:// (Might be wrong IP, go to www.myipaddress.com to be sure)
+09-12 8:51 AM:Player.dat file doesn't exist yet, not loading it.
+09-12 8:51 AM:Scripting system initted, ran init.c.
+09-12 8:51 AM:Running maint.
+09-12 8:51 AM:Adding to log: `7NEW SPEED LIMIT SPEEDS DEATH
+
+09-12 8:51 AM:Adding to log: `^Maybe 55 in a residential is bad. "We should've known people can't dodge cars," admits the Department of Transportion.
+
+
+09-12 8:51 AM:Script maint.c processed.
+09-12 8:51 AM:Initted speech system.
+09-12 8:51 AM:Updating game data.
+09-12 8:51 AM:Guy at 127.0.0.1 loggong in
+09-12 8:51 AM:TimeT size is 4
+09-12 8:51 AM:There are 0 people with this persons IP address.
+09-12 8:51 AM:Guy at 127.0.0.1 loggong in
+09-12 8:51 AM:TimeT size is 4
+09-12 8:51 AM:There are 0 people with this persons IP address.
+09-12 8:52 AM:Adding record to player data.
+09-12 8:52 AM:Creating player account 0.
+09-12 8:52 AM:8:52 AM:Seth has just moved into town!
+09-12 8:52 AM:Adding to log: `5A new parlor (Seth's parlor) run by Seth has been opened!
+
+
+09-12 8:53 AM:`7The TV: `w"A Super Rich teenage boy just left Seth's parlor looking pissed," a reporter says.
+09-12 8:54 AM:Seth earned 33 BP's off a Super Rich guy
+09-12 8:54 AM:force_range activated - var changing cheapness was 0.  Put in range.
+09-12 8:54 AM:Seth earned 41 BP's off a Poor guy
+09-12 8:55 AM:Seth earned 16 BP's off a Super Rich guy
+09-12 8:55 AM:`7The TV: `w"A Poor middle aged woman just left Seth's parlor looking pissed," a reporter says.
+09-12 8:55 AM:Seth earned 17 BP's off a Average guy
+09-12 8:56 AM:8:56 AM:Seth logged off.
+09-12 8:56 AM:Guy at 127.0.0.1 loggong in
+09-12 8:56 AM:TimeT size is 4
+09-12 8:56 AM:There are 1 people with this persons IP address.
+09-12 8:57 AM:Server Stopped.
+09-12 10:27 AM:FuneralQuest Server 1.0 Initializing...
+09-12 10:27 AM:Changing directory to D:\projects\FuneralQuest\source\..\dist\.
+09-12 10:27 AM:Loading system settings. (1.0 version)
+09-12 10:27 AM:Can't load config.dat file, creating a new one with defaults.
+WARNING: 09-12 10:27 AM:Error saving config.dat.  Out of HD space or something?
+
+09-12 10:27 AM:HTTP Server Started: Gust [] on port 80
+09-12 10:27 AM:Browser address to reach server: http:// (Might be wrong IP, go to www.myipaddress.com to be sure)
+09-12 10:27 AM:Player.dat file doesn't exist yet, not loading it.
+09-12 10:27 AM:Scripting system initted, ran init.c.
+09-12 10:27 AM:Running maint.
+09-12 10:27 AM:Adding to log: `7THEATRE FIRE KILLS DOZENS
+
+09-12 10:27 AM:Adding to log: `^The popular theatrical adaptation of the movie "BackDraft" came to deadly conclusion last night in neighboring town Blaine when the special effects got out of control.
+
+
+WARNING: 09-12 10:27 AM:Error saving config.dat.  Out of HD space or something?
+
+09-12 10:27 AM:Script maint.c processed.
+09-12 10:27 AM:Server Stopped.
+09-12 10:52 AM:FuneralQuest Server 1.0 Initializing...
+09-12 10:52 AM:Changing directory to D:\projects\FuneralQuest\source\..\dist\.
+09-12 10:52 AM:Loading system settings. (1.0 version)
+09-12 10:52 AM:Loading game config. (1.0 version)
+09-12 10:52 AM:HTTP Server Started: Gust [] on port 80
+09-12 10:52 AM:Browser address to reach server: http:// (Might be wrong IP, go to www.myipaddress.com to be sure)
+09-12 10:52 AM:Loading players. (1.0 version)
+09-12 10:52 AM:Scripting system initted, ran init.c.
+09-12 10:52 AM:Initted speech system.
+09-12 10:52 AM:Server Stopped.

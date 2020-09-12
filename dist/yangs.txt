@@ -1,0 +1,76 @@
+//This file holds the random strings that we show when no customers appear.
+
+//*************************************************************
+range|-229999999|299999999
+
+start_entry
+message|Watch out for large rocks.
+start_entry
+message|The secret sauce will surprise you.
+start_entry
+message|You will soon cross the great waters... and we don't mean by jet.
+start_entry
+message|Your financial investments will sour.
+start_entry
+message|Man who drop watch in toilet bound to have crappy time.
+start_entry
+message|Your favorite tv show will be canceled soon.
+start_entry
+message|You may experience chest pains.
+start_entry
+message|Someone in town wants you dead.
+start_entry
+message|Stay away from fire.
+start_entry
+message|Stay away from large ocean liners.
+start_entry
+message|Man who stand on toilet is high on pot.
+start_entry
+message|Buy life insurance.  Soon.
+start_entry
+message|Your lucky lotto numbers are 6,6,6,6,6,6.
+start_entry
+message|The paper is blank!
+start_entry
+message|The pork wasn't really pork.
+start_entry
+message|Beware video tapes you thought you erased.
+start_entry
+message|Baseball wrong.  Man with four balls no walk.
+start_entry
+message|Do unto others, then run.
+start_entry
+message|Man who run behind car get exhausted.
+start_entry
+message|Chef without utensils can still find ways to stir soup.
+start_entry
+message|Always remember to pillage before you burn.
+start_entry
+message|Now is a good time for automobile servicing.
+start_entry
+message|You will become a great bore in your later years.
+start_entry
+message|You regard free speech not as a right but as a never-ending obligation.  
+start_entry
+message|They say you are a true miracle worker - if you work, it is a miracle.  
+start_entry
+message|Act natural. Don't turn around.  
+start_entry
+message|When it comes to helping others, you'll stop at nothing. 
+start_entry
+message|Are you wearing that shirt just to be funny? 
+start_entry
+message|I'm watching you.
+start_entry
+message|Stay off the back roads.
+start_entry
+message|Help! I am being held prisoner in a Chinese bakery.
+start_entry
+message|Changes for the better are being made against you. (huh?!)
+start_entry
+message|The lottery is a special tax for those not good at math.
+start_entry
+message|I'm watching you. - Your personal Stalker
+start_entry
+message|Fortune Not Found: Abort, Retry, Ignore? 
+

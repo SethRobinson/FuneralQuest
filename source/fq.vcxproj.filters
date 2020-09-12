@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c77c6ff5-e9ae-48e8-9c85-5b74b37e3732}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{9861dc2c-dd5c-4d20-8a22-544a16b9b458}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialog">
+      <UniqueIdentifier>{8e53b017-b35a-416d-a7fe-bf049ea7ab3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\File">
+      <UniqueIdentifier>{4b4fd678-5d1a-4c25-9bb5-2dc79707c93f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{4562fd29-4a7f-4bf6-9c28-59feae4a9630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LicenseClient">
+      <UniqueIdentifier>{b3b616ab-7f3a-429e-8592-18df7368f94c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f9a48888-36b1-43ef-9aa3-84557ba9b9aa}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{328cb4f4-c758-4ef3-be91-e0b5ed8940ac}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{9e5c63f2-0b89-4e89-92bb-d3d37c65746d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared">
+      <UniqueIdentifier>{6992ed0f-3dd0-435e-8d01-a3ff4564d5dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\CFileLib">
+      <UniqueIdentifier>{46c78e05-11ce-42e3-94c9-164bbf8e5b99}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="command_hospital.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="command_options.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="command_random.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="command_script.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="command_script_misc.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="command_script_vars.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="command_store.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_bank.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_bar.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_battle.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_city_hall.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_comp.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_complicated.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_customer.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_customer_risk.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_getname.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_main.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_map.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_misc.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_newday.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_news.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_rankings.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_send_mail.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_spirit.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commands_yangs.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="create_customer.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="funeral.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="location_data.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="new_user.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_edit_choose.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_game_settings.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_karma.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_player_edit.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_ratings_text.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_simple_edit.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dlg_tray.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="fqDlg.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="user_list.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="window_timer.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="CAutoSave.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="file_system.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="funeral_file.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="player_file.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="player_struct.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="broadcast.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CEvent.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="COptions.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="funeral_util.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="maint.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="message_que.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="misc_utils.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="online_util.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="rankings.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="reset_game.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="StrListCtrl.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="alert_socket.cpp">
+      <Filter>Source Files\LicenseClient</Filter>
+    </ClCompile>
+    <ClCompile Include="license_process.cpp">
+      <Filter>Source Files\LicenseClient</Filter>
+    </ClCompile>
+    <ClCompile Include="server_connect.cpp">
+      <Filter>Source Files\LicenseClient</Filter>
+    </ClCompile>
+    <ClCompile Include="shared_util.cpp">
+      <Filter>Source Files\LicenseClient</Filter>
+    </ClCompile>
+    <ClCompile Include="FakeCStringEx.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="fq.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="globals.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="online_struct.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="security.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="server_settings.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="transportation.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\all.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CRandom.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CRobotInternet.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CScript.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CScriptEngine.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CScriptFunction.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CScriptOp.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CScriptParse.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CScriptVar.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CScriptVarBase.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CSpeech.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CTextParse.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CTimer.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\mfc_all.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\mfc_all_u.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\std_all.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\uni.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\winsock_util.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\adler32.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFileLib.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFL.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFL_delta8.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFL_delta16.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFL_delta32.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFL_none.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFL_zlib.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFLDirectoryEntry.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFLLibrary.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFLMaker.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFLResource.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\CFLResourceFilter.cpp">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\compress.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\crc32.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\deflate.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\gzio.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\infblock.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\infcodes.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\inffast.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\inflate.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\inftrees.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\infutil.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\ioapi.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\iowin32.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\trees.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\uncompr.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\unzip.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\zip.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CFileLib\zutil.c">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CEncrypt.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\CProtection.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\timer.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\unicode_utils.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Pro\VC98\MFC\Include\AFXTEMPL.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alert_socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\turbo\shared\all.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CAutoSave.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\CLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLinkedRank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command_options.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command_random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command_script.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command_script_misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command_script_vars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command_store.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_bank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_bar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_battle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_city_hall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_comp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_complicated.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_customer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_customer_risk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_getname.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_hospital.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_script.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_send_mail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_spirit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands_yangs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="create_customer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dlg_edit_choose.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dlg_game_settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dlg_karma.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dlg_player_edit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dlg_ratings_text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dlg_simple_edit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="file_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fq.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="funeral.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="funeral_file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="funeral_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="license_process.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="license_vars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="location_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="maint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="misc_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="online_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player_file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PRANDGEN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rankings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="reset_game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="security.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="server_connect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="server_settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StrListCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="transportation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="user_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FakeCStringEx.h">
+      <Filter>Source Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\All.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CRandom.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CRobot.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CRobotInternet.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CScript.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CScriptEngine.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CScriptFunction.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\cscriptop.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CScriptParse.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CScriptPassVars.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CScriptVar.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CScriptVarBase.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CSpeech.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CTextParse.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CTimer.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\mfc_all.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\mfc_all_u.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\std_all.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\uni.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\winsock_util.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFileLib.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFL.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFLDirectoryEntry.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFLEnumerator.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFLEnums.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFLLibrary.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFLMaker.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFLResource.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\CFLResourceFilter.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\deflate.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\infblock.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\infcodes.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\inffast.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\inffixed.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\inftrees.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\infutil.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\ioapi.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\iowin32.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\trees.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\unzip.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\zconf.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\zip.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\zlib.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CFileLib\zutil.h">
+      <Filter>Source Files\Shared\CFileLib</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CEncrypt.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\CProtection.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\unicode_utils.h">
+      <Filter>Source Files\Shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\fq.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="fq.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\fq.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\dist\history.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="fqDlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="online_struct.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="player_struct.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="vars.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Design Doc.txt" />
+  </ItemGroup>
+</Project>

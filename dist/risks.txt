@@ -1,0 +1,291 @@
+//Information on risks.  You must reload texts (or restart FQ) for any changes to take place.
+
+//the lady who lost the ring risk
+
+//************************
+//Event start text
+start_message|`$A woman walks into the store.\n\n`wWoman: `$"Hello *SIR*, a few days ago you buried my daughter.   She was wearing a giant ruby ring, you didn't happen to take it off and save it for me, did you?"\n\nThe ring is on  your desk, it doesn't look like she saw it.
+
+//URL's for foreground and background
+start_url|flash/mother/normal.swf
+start_url_bg|flash/background/background_2.swf
+
+//Option buttons
+normal|  Give ring
+risk|      Lie
+
+//RISK TAKEN; SUCCESS MESSAGE
+success_message|`w*NAME*: `$"I'm so sorry my dear woman, it's buried forever."\n\n`$The woman leaves in tears, the ring is yours!
+success_url|flash/ring/ring.swf
+success_url_bg|
+
+//RISK TAKEN; FAIL MESSAGE
+fail_message|`w*NAME*: `$"I'm so sorry my dear woman, it's buried forever."\n\n`wWoman: `$"Alright, thanks anyway...WHAT THE?? THAT'S HER RING RIGHT THERE!  How 'bout putting it on this finger?"
+fail_url|flash/mother/finger.swf
+fail_url_bg|
+
+//NO RISK TAKEN, AUTOMATICALLY GETS SOME SMALL POINTS
+normal_message|`w*NAME*: `$"Ah yes, the ring.  I was about to phone you.. here it is."\n\n`wWoman: `$"Thank you so much!  This ring meant so much to me."
+normal_url|flash/mother/happy.swf
+normal_url_bg|
+
+//signal we're done describing it and add it
+add_risk|
+
+//************************
+
+
+//************************
+//dirt finger event
+//Event start text
+start_message|`$You notice a finger poking through the dirt on one of your fresh graves.\n\nIf you re-bury it correctly to the full six feet it will take some time.  Of course, you could just kick some dirt over the top...who would notice?
+
+//URL's for foreground and background
+start_url|flash/stuff/question.swf
+start_url_bg|
+
+//Option buttons
+normal|  Re-Bury
+risk|   Kick Dirt
+
+//RISK TAKEN; SUCCESS MESSAGE
+success_message|`$You just kick some dirt over the shallow spots.\n\nYou wait and watch through the window awhile.. nobody seems to notice!
+success_url|flash/stuff/money_bag_2.swf
+success_url_bg|
+
+//RISK TAKEN; FAIL MESSAGE
+fail_message|`$You just kick some dirt over the shallow spots.\n\nYou wait and watch through the window awhile.. Uh oh, what is that dog doing... people coming over.. great, now kids are screaming.
+fail_url|flash/animals/dog-dragging-hand.swf
+fail_url_bg|
+
+//NO RISK TAKEN, AUTOMATICALLY GETS SOME SMALL POINTS
+normal_message|`$You figure better safe than sorry.  You get the power digger from the garage and things actually go faster than you thought they would.
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|
+
+//signal we're done describing it and add it
+add_risk|
+
+//************************
+
+//************************
+//lotto event
+//Event start text
+start_message|`$As you are moving a body downstairs you notice an unused lottery ticket falls out of the corpse's pocket.\n\nThe viewing is in a few minutes, but playing the ticket would only take a second...
+
+//URL's for foreground and background
+start_url|flash/stuff/lotteryticket.swf
+start_url_bg|
+
+//Option buttons
+normal|Put it back
+risk| Scratch It
+
+//RISK TAKEN; SUCCESS MESSAGE
+success_message|`$You lean the body against the wall and play the ticket... (scroll down)\n\n\n\n\n\n\nIt's a winner!\n\nYou put the ticket in your own pocket to cash later.
+success_url|flash/stuff/lottery_win.swf
+success_url_bg|
+
+//RISK TAKEN; FAIL MESSAGE
+fail_message|`$You lean the body against the wall and play the ticket... (scroll down)\n\n\n\n\n\n\nIt lost.  You kick the body in anger...\n\n`4THE CORPSE FALLS DOWN THE STAIRS!  It bounces into the slumber room to the surprise of the family.
+fail_url|flash/stuff/lottery_lose.swf
+fail_url_bg|
+
+//NO RISK TAKEN, AUTOMATICALLY GETS SOME SMALL POINTS
+normal_message|`$You carefully put the ticket back in, now is not the time to gamble.
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|
+
+//signal we're done describing it and add it
+add_risk|
+
+//************************
+
+//************************
+//Rose event
+
+//Event start text
+start_message|`$As you are preparing the floral arrangement for a service you notice the flowers are red instead of the requested white..\n\nYou know you should order new ones but you also see a bucket of white paint nearby...
+
+//URL's for foreground and background
+start_url|flash/stuff/red_rose.swf
+start_url_bg|flash/background/background_celemony.swf|haha, nice spelling Akiko...
+
+//Option buttons
+normal|Order New
+risk|Paint them
+
+//RISK TAKEN; SUCCESS MESSAGE
+success_message|`$You paint the flowers.\n\nAt the service an old woman tries to smell one but you shove her away, great work!
+success_url|flash/places/funeral-ceremony.swf
+success_url_bg|
+
+//RISK TAKEN; FAIL MESSAGE
+fail_message|`$You paint the flowers.\n\nAt the service an old woman smells them and unknowingly leaves a `4bright white mark on her nose`$.  You try to stifle a giggle but fail, everybody starts laughing at woman who is now in tears.
+fail_url|flash/stuff/money_bag.swf
+fail_url_bg|
+
+//NO RISK TAKEN, AUTOMATICALLY GETS SOME SMALL POINTS
+normal_message|`$You order replacement flowers.  Taking shortcuts is not how you want to build your reputation.
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|
+
+//signal we're done describing it and add it
+add_risk|
+
+//************************
+
+
+
+
+//Toilet event
+
+//Event start text
+start_message|`$In the middle of an embalming you must visit the restroom.\n\nYou're really in a rush to eat so you can get back to work and finish early.. yet washing your hands is the law, albeit a time-waster.  What do you do?
+
+//URL's for foreground and background
+start_url|flash/blank.swf
+start_url_bg|flash/stuff/toilet.swf
+
+//Option buttons
+normal|Wash Hands
+risk|Eat Quick
+
+//RISK TAKEN; SUCCESS MESSAGE
+success_message|`$You skip the washing part.\n\nAfter eating you finish the embalming with time to spare!. You break out your Atari 2600 and play games in the basement for awhile.
+success_url|flash/stuff/money_bag_2.swf
+success_url_bg|flash/places/embalming-room.swf
+
+//RISK TAKEN; FAIL MESSAGE
+fail_message|`$You skip the washing part.\n\nAfter eating you get back to the embalming.  You barely finish removing the small intestines before you `4start feeling really sick`$.. something you ate maybe?
+fail_url|flash/stuff/money_bag.swf
+fail_url_bg|flash/places/embalming-room.swf
+
+//NO RISK TAKEN, AUTOMATICALLY GETS SOME SMALL POINTS
+normal_message|`$You carefully wash your hands with disinfectant.  Cleanliness is godliness.
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|
+
+//signal we're done describing it and add it
+add_risk|
+
+//************************
+
+/ jjohn@taskboy.com
+// Use these FQ Modifications and prosper
+// Necrophilia 
+start_message|`$It's true that the good die young. In fact some of your inventory looks so good, it's a right shame to let them go to waste.\n\nWould it really be so wrong to take a few pictures?
+
+start_url|flash/places/embalming-woman.swf
+start_url_bg|flash/places/embalming-room.swf
+
+normal|Forget it
+risk|Take photos
+
+success_message|`$Throwing caution to the wind, you power up your Nikon camera and get busy.\n\nHey, at least you don't have to deal with `4prima-donna back-sassing `$from the models!
+success_url|flash/blank.swf
+success_url_bg|flash/places/embalming-room.swf
+
+fail_message|`$As you position the models, `4the corpses begin to fall apart. `$Just as you finish reassembling the bodies, you are discovered by the cleaning lady.\n\nBoy, is this going to hurt business!
+fail_url|flash/blank.swf
+fail_url_bg|flash/places/embalming-room.swf
+
+normal_message|`$After thinking more on the matter, you decide to leave pornography to professional perverts.
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|
+
+add_risk|
+
+//************************
+//Keying the herse risk
+start_message|`$You see a competitor's shiny new hearse parked near your parlor.  No one is looking.
+start_url|flash/hearse/hearse4.swf
+start_url_bg|flash/blank.swf
+
+normal|Gnash teeth
+risk|Key hearse
+
+success_message|`$You key the hearse.\n\n`4Pay back's a bitch!
+success_url|flash/animals/dog-dragging-hand.swf
+success_url_bg|flash/blank.swf
+
+fail_message|`$Someone spotted you. \n\n`4You have to pay reparations.
+fail_url|flash/stuff/money_bag.swf
+fail_url_bg|flash/blank.swf
+
+normal_message|`$Revenge is a dish best served cold. You will await the passing of years until the most perfect opportunity arises. Then you will feed off the bitter tears of your competitor's sorrow. 
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|flash/blank.swf
+
+add_risk|
+
+//************************
+//Pratice the black arts
+start_message|`$You happen upon an `5ancient scroll `$in the suit pocket of your most recent client. Its black words instruct you on how to raise the dead.
+start_url|flash/stuff/question.swf
+start_url_bg|flash/background/background_1.swf
+
+normal|Burn scroll
+risk|Cast spell
+
+success_message|`$After completing an incantation better suited for inhuman tongues, the ground trembles and cracks! `4The dead walk again!\n\n`$Coolio! 
+success_url|flash/stuff/battle_lose.swf
+success_url_bg|flash/background/background_1.swf
+
+fail_message|`4You raised something all right!
+fail_url|flash/animals/dog-dragging-hand.swf
+fail_url_bg|
+
+normal_message|`$As the scroll disappears into thick, viscous smoke, you feel pride in your victory over the forces of darkness.\n\nThen you realize that there are more scrolls out there... 
+normal_url|flash/people/jesus_happy.swf
+//normal_url_bg|flash/background/background_1.swf
+
+add_risk|
+
+
+
+//************************
+// Ring Lady Blackmail risk
+start_message|`$A vaguely familar woman walks in.\n\n`wWoman: `$"Hello *SIR*. I've been watching your parlor carefully and I've seen the blasphemous things you do to save money. You're a horrible, horrible person! I really should report what I've seen to the police, but I may be pursuaded to look the other way ... for a fee."
+start_url|flash/mother/normal.swf
+start_url_bg|flash/background/background_1.swf
+
+normal| Pay Bribe
+risk|    Bluff
+
+success_message|`w*NAME*: `$"What?! How dare you threaten to ruin my good name with pernacious lies and half-truths! Get out!"\n\nThe woman blanches and runs out of your parlor. I guess you can't kid a kidder.
+success_url|flash/blank.swf
+success_url_bg|
+
+fail_message|`wWoman: `$"Skinflint! You'll regret this!"\n\nYou have a feeling the Deathville PD may be dropping by for a chat.\n\nRats! 
+fail_url|flash/places/funeral_enemy_police.swf
+fail_url_bg|
+
+normal_message|`$A little hush money never hurt anybody (much). Perhaps it's time to paint the windows black in your funeral home. 
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|
+
+add_risk|
+
+
+//Recycle Headstones risk
+start_message|`$As you look at the lonely cemetery that lies in back of your parlor, you think about all the money that's been wasted on headstones no one ever comes to visit. A person could make a tidy sum by recycling some of those headstones. Go for it?  
+start_url|flash/blank.swf
+start_url_bg|flash/background/background_7.swf
+
+normal|Forget it
+risk|  Recycle 
+
+success_message|`$Recycling. It's good for the economy and Mother Earth.\n\nNice going, Slick. 
+success_url|flash/stuff/money_bag_2.swf
+success_url_bg|
+
+fail_message|`$Just as you deracinate the last headstone, you hear a withered, scratchy shriek from behind you. Uh oh.\n\n`4You were caught in the act of cementary vandalism!
+fail_url|flash/stuff/money_bag.swf
+fail_url_bg|
+
+normal_message|`$Fie on those old mangy headstones. It would be more trouble to move them than they're worth.
+normal_url|flash/people/jesus_happy.swf
+normal_url_bg|
+
+add_risk|

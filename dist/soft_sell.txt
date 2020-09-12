@@ -1,0 +1,280 @@
+//Information on hard sells.  You must reload texts (or restart FQ) for any changes to take place.
+//Order of listing isn't important as they are picked randomly.
+
+reference|a
+name|Floral Arrangement
+price|150
+add_item|
+
+reference|some
+name|Grief Therapy
+price|300
+add_item|
+
+reference|a
+name|Memorial Plaque
+price|100
+add_item|
+
+reference|some|
+name|Live Piano Music
+price|450
+add_item|
+
+reference|a
+name|Full Reconstruction
+price|600
+add_item|
+
+reference|some
+name|Air Brushed Embalming
+price|400
+add_item|
+
+reference|some|
+name|Burial Footwear
+price|150
+add_item|
+
+reference|a few
+name|Paid Mourners
+price|350
+add_item|
+
+reference|some
+name|Relaxing Mourning Music
+price|50
+add_item|
+
+reference|some
+name|Punch and Cookies
+price|150
+add_item|
+
+reference|a
+name|DuraRest (tm) Neck Brace
+price|150
+add_item|
+
+reference|some|
+name|Casket Scrollwork
+price|450
+add_item|
+
+reference|a
+name|Fine Burial Suit
+price|250
+add_item|
+
+reference|some|
+name|Burial Makeup
+price|100
+add_item|
+
+reference|a
+name|Post-Mortem Baptism
+price|300
+add_item|
+
+reference|some
+name|Burial Jewelry
+price|400
+add_item|
+
+reference|a
+name|Grave Statuary
+price|350
+add_item|
+
+reference|a
+name|Professional Orator
+price|550
+add_item|
+
+reference|a
+name|Burial Body Shave
+price|200
+add_item|
+
+reference|some|
+name|Burial Hairstyling
+price|150
+add_item|
+
+reference|a
+name|Tombstone Quotation
+price|250
+add_item|
+
+reference|a
+name|Shine-Polished Casket
+price|150
+add_item|
+
+reference|some|
+name|Debt Counseling
+price|300
+add_item|
+
+reference|a
+name|Tree-Shaded Plot
+price|500
+add_item|
+
+reference|a
+name|Pet Co-Burial
+price|450
+add_item|
+
+reference|a
+name|Locked Casket
+price|50
+add_item|
+
+reference|some|
+name|Grave-Robber Insurance
+price|200
+add_item|
+
+reference|a
+name|Hermetically Sealed Casket
+price|150
+add_item|
+
+reference|a
+name|Personalized Oiuja Board
+price|100
+add_item|
+
+reference|a
+name|Trance-Medium Seance
+price|300
+add_item|
+
+reference|a
+name|Casket Window
+price|100
+add_item|
+
+reference|some|
+name|Thank-You Cards
+price|50
+add_item|
+
+reference|a
+name|Framed Death Certificate
+price|150
+add_item|
+
+reference|a
+name|Casket Air Freshener
+price|100
+add_item|
+
+reference|a
+name|Burial Service Canopy
+price|250
+add_item|
+
+reference|an
+name|Eternal Flame
+price|600
+add_item|
+
+reference|a
+name|Memorial Collector's Card
+price|50
+add_item|
+
+reference|a
+name|Memorial Action Figure
+price|350
+add_item|
+
+reference|an
+name|Expedited Burial
+price|300
+add_item|
+
+reference|some|
+name|Coptic Urns
+price|500
+add_item|
+
+//from jjohn 11-24-02
+
+reference|extra|
+name|Vermin Traps
+price|100
+add_item|
+
+reference|a|
+name|Life-sized Icon of the Deceased
+price|300
+add_item|
+
+reference|some|
+name|Custom Arabesque Coffin Detailing
+price|250
+add_item|
+
+reference|an|
+name|Annoying Bag Piper|
+price|50
+add_item|
+
+reference|a|
+name|Sober Clergyman for the service
+price|100
+add_item|
+
+reference|a|
+name|Flock of Nightingales released at the service 
+price|300
+add_item|
+
+reference|several
+name|Fancy Bees-Wax Candles
+price|250
+add_item|
+
+reference|a|
+name|Recycled Headstone
+price|150
+add_item|
+
+reference|a
+name|Coffin Cell Phone (in case of premature burial)
+price|150
+add_item|
+
+reference|a
+name|Pack of 10 Remembrance Services
+price|400
+add_item|
+
+reference|a
+name|Ghost-Written Obutuary
+price|250
+add_item|
+
+reference|some
+name|Funeral Confetti
+price|60
+add_item|
+
+reference|some
+name|Memorial Phone Cards
+price|50
+add_item|
+
+reference|two
+name|Bottles of Keening Soda Water
+price|100
+add_item|
+
+reference|several
+name|Boxes of Extra-Strength Facial Tissues
+price|50
+add_item|
+

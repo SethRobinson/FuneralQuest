@@ -1,0 +1,9 @@
+;NOTE:  You must "Reload Text" (or restart) for changes to be active.
+
+;Here you can add IP address to be banned.  Adding part of an IP will
+;ban anyone STARTING with that IP so it's possible to ban entire subnets
+;which is required to really ban a dialup guy in most cases.
+
+;You can also add a comment so you can remember why you banned it.
+
+ban|66.66.66.66|This will stop satan from playing, always a good idea.

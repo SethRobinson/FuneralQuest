@@ -1,0 +1,24 @@
+;NOTE:  You must "Reload Text" (or restart) for changes to be active.
+
+;No, I'm not swearing for fun.  (not this time)  This is the list of bad
+;words and replacements.  Add as you wish.  Uncomment the commented ones to
+;screw with users. :>
+;Sorry I stole this from LORD!!!
+
+
+
+addword|fuck|fudge
+addword|shit|shoot
+addword|dick|richard
+addword|prick|thorn
+addword|pussy|kitty
+addword|cunt|meany
+addword|bitch|she dog
+addword|phuck|bless
+addword|cock|pencil
+addword|vagina|wet place
+addword|penis|rod
+
+;addword|god|`%Seth`2
+;addword|hate|love
+;addword|die|live
