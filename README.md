@@ -1,4 +1,4 @@
-Funeral Quest source code release
+## Funeral Quest source code release
 
 Funeral Quest is kind of an attempt to create a web-based "daily turn" BBS style game.  It allows real humans to partake in the cut throat world
 of the death care industry by running competing funeral parlors.
@@ -6,8 +6,11 @@ of the death care industry by running competing funeral parlors.
 I'm primarly releasing this because someone wants to look at the source for his own clone (Hi Richard!), but also so maybe it can live on in its own way.
 Feel free to port this to anything.  See license.txt for the license, it's Proton SDK's license, which is basically "do whatever you want" with attribution.
 
+For more info on setting it up, see:  https://www.codedojo.com/?p=2189
 
---- WARNING:
+If you just want to play, a list of active games is here: https://rtsoft.com/pages/funeral_quest.php
+
+### WARNING:
 
 This is a home-built http server that runs a game, so assume it could be hacked or exploited in some way, so you probably shouldn't run it
 publicly on a box with sensitive info on it, just in case.  It's old code from a different time, I mean, it requires Flash on a webbrowser to work.
@@ -21,7 +24,7 @@ and totally not needed for FQ.
 * Stripped out drm/protection code
 * Removed sub projects like FQStress (stress tester), drm server system
 
-Notes:
+### Notes:
 
 - The "Play local" button that uses localhost worked, but only if I ran the server on port 80.  82 didn't work, not sure why
 - The multiplayer/communication is 100% http polling based, no special sockets or cors stuff to worry about.  However, not
@@ -40,21 +43,17 @@ and not compiled.  (they are not distributed to the player, which only sees the 
 - This uses MFC (Microsoft Foundation Class library) for the GUI, so that's why the GUI source looks weird and insane and why the server isn't
 easily portable to linux.  Could be done though...
 
-How to compile:
+### How to compile:
 
 - Install Visual Studio 2019. Make sure you've included C++ and the latest Windows 10 SDK install options.
 - Open source/fq.sln and compile.  Both Debug or Release should create dist/fq.exe.   Running the file should start the server
 - Clicking the "Logon Channel 1" button should allow you to play locally via your browser.  (Chrome worked for me, although you have to enable Flash)
 
-For more info on setting it up, see:  https://www.codedojo.com/?p=2189
+### Credits:
 
-If you just want to play, a list of active games is here: https://rtsoft.com/pages/funeral_quest.php
+- Seth A. Robinson - Programming, design
+- Akiko Robinson - Art
+- Greg Smith - Additional design
 
-Credits:
-
-Seth A. Robinson - Programming, design
-Akiko Robinson - Art
-Greg Smith - Additional design
-
- Funeral Quest is Copyright 2020 Robinson Technologies
+Funeral Quest is Copyright 2020 Robinson Technologies
 
