@@ -48,4 +48,13 @@ How to compile:
 
 For more info on setting it up, see:  https://www.codedojo.com/?p=2189
 
+If you just want to play, a list of active games is here: https://rtsoft.com/pages/funeral_quest.php
+
+Credits:
+
+Seth A. Robinson - Programming, design
+Akiko Robinson - Art
+Greg Smith - Additional design
+
+ Funeral Quest is Copyright 2020 Robinson Technologies
 
