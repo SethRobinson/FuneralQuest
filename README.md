@@ -55,5 +55,5 @@ easily portable to linux.  Could be done though...
 - Akiko Robinson - Art
 - Greg Smith - Additional design
 
-Funeral Quest is Copyright 2020 Robinson Technologies
+Funeral Quest is Copyright 2001 Robinson Technologies
 
